@@ -34,5 +34,37 @@ namespace TabarTesting
             String Error = clsValidate.ValidateEmail("h@h.com");
             Assert.AreEqual("", Error);
         }
+        [TestMethod]
+        public void ValidateAddress()
+        {
+            clsValidate Validator = new clsValidate();
+            String Error = clsValidate.ValidateAddress(1234,"ADBCE","1 Main Street");
+            Assert.AreEqual("", Error);
+        }
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            clsCustomerCollection AllCustomers = new clsCustomerCollection();
+            clsCustomer TestCustomer = new clsCustomer();
+            Int32 PK = 0;
+
+            TestCustomer.HouseNo = 1;
+            TestCustomer.HouseCounty = "Leicestershire";
+            TestCustomer.PostCode = "ABCDE";
+            TestCustomer.HouseStreet = "1 main street";
+            TestCustomer.EMail = "h@h.com";
+            TestCustomer.FirstName = "John";
+            TestCustomer.LastName = "Smith";
+            TestCustomer.PhoneNo = 1234567;
+
+            AllCustomers.ThisCustomer = TestCustomer;
+
+            PK = AllCustomers.Add();
+
+            TestCustomer.CustomerNo = PK;
+
+            Assert.AreEqual(AllCustomers.ThisCustomer, TestCustomer);
+        }
+
     }
 }
