@@ -27,5 +27,27 @@ namespace TabarClasses
             }
             return Error;
         }
+        public static string ValidateName(string FirstName, string LastName)
+        {
+            string Error = "";
+            if (FirstName == "" || FirstName.Length > 50 || LastName == "" || LastName.Length > 50)
+                Error = "Names cannot be blank or over 50 characters";
+            return Error;
+        }
+        public static string ValidateAddress(int HouseNo, string PostCode, string HouseStreet)
+        {
+            string Error = "";
+            if (HouseNo >= 10000 || HouseNo <= 0)
+                Error = Error + " House number cannot be 0 or below and cannot be 10000 or above";
+            if (PostCode.Length > 7 || PostCode.Length < 4)
+            {
+                Error = Error + " Postcode must be between 4-7 characters";
+            }
+            if (PostCode.Length > 100 || PostCode.Length < 1)
+            {
+                Error = Error + " Address must be between 1-50 characters";
+            }
+            return Error;
+        }
     }
 }
