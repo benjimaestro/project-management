@@ -1,13 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabarBackOffice", "TabarBackOffice\TabarBackOffice.csproj", "{AD0DF7EB-BAED-4C98-8461-5A30F436F9B7}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TabarFrontOffice", "TabarFrontOffice\", "{143D50D2-EDBA-499F-A108-5A13C2EE76C9}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{5a260ec4-9f8a-494f-8163-05dfd36ea21d}|TabarClasses.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_3038"
 		Debug.AspNetCompiler.PhysicalPath = "TabarFrontOffice\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3038\"

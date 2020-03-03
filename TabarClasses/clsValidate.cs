@@ -20,6 +20,7 @@ namespace TabarClasses
             try
             {
                 var addr = new System.Net.Mail.MailAddress(EMail);
+                if (EMail.Length > 50) { Error = "Must be under 50 characters"; }
             }
             catch
             {

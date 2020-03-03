@@ -20,6 +20,19 @@
         <asp:TextBox ID="txtPhoneNo" runat="server" style="z-index: 1; left: 10px; top: 242px; position: absolute" TextMode="Number"></asp:TextBox>
         <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 10px; top: 285px; position: absolute" Text="Postcode"></asp:Label>
         <asp:TextBox ID="txtPostcode" runat="server" style="z-index: 1; left: 10px; top: 310px; position: absolute"></asp:TextBox>
+        <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 10px; top: 340px; position: absolute" Text="First Name"></asp:Label>
+        <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 10px; top: 360px; position: absolute"></asp:TextBox>
+        <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 10px; top: 400px; position: absolute" Text="Last Name"></asp:Label>
+        <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 10px; top: 420px; position: absolute"></asp:TextBox>
+        <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 10px; top: 460px; position: absolute" Text="County"></asp:Label>
+        <asp:TextBox ID="txtHouseCounty" runat="server" style="z-index: 1; left: 10px; top: 480px; position: absolute"></asp:TextBox>
+        <asp:Label ID="Label9" runat="server" style="z-index: 1; left: 10px; top: 520px; position: absolute" Text="House Street"></asp:Label>
+        <asp:TextBox ID="txtHouseStreet" runat="server" style="z-index: 1; left: 10px; top: 540px; position: absolute"></asp:TextBox>
+        <asp:Label ID="Label10" runat="server" style="z-index: 1; left: 10px; top: 580px; position: absolute" Text="House Number"></asp:Label>
+        <asp:TextBox ID="txtHouseNo" runat="server" style="z-index: 1; left: 10px; top: 600px; position: absolute" TextMode="Number"></asp:TextBox>
+        <asp:Button ID="btnRegister" runat="server" style="z-index: 1; left: 10px; top: 630px; position: absolute; right: 1114px;" Text="Register" OnClick="btnRegister_Click" />
+        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 90px; top: 630px; position: absolute" Text="Cancel" />
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 165px; top: 82px; position: absolute; height: 195px; width: 672px" Font-Bold="True" ForeColor="Red"></asp:Label>
     </form>
 </body>
 </html>
