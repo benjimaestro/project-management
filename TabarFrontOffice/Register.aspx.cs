@@ -19,10 +19,10 @@ public partial class Login : System.Web.UI.Page
 
     }
 
-    void add()
+    string add()
     {
         clsCustomerCollection Customers = new clsCustomerCollection();
-        String Error = Customers.ThisCustomer.Valid(txtHouseNo.Text, txtHouseCounty.Text, txtPostcode.Text, txtHouseStreet.Text, txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPhoneNo.Text);
+        String Error = Customers.ThisCustomer.Valid(txtHouseNo.Text, txtHouseCounty.Text, txtPostcode.Text, txtHouseStreet.Text, txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPhoneNo.Text, txtPassword.Text, txtPasswordConfirm.Text);
         if (Error == "")
         {
             Customers.ThisCustomer.HouseNo = Convert.ToInt32(txtHouseNo.Text);
@@ -33,18 +33,26 @@ public partial class Login : System.Web.UI.Page
             Customers.ThisCustomer.HouseCounty = txtHouseCounty.Text;
             Customers.ThisCustomer.HouseStreet = txtHouseStreet.Text;
             Customers.ThisCustomer.EMail = txtEmail.Text;
-            ///////////PASSWORD/////////////////////
+            Customers.ThisCustomer.Password = Customers.GetHashPassword(txtPassword.Text);//Hash password before adding
             Customers.Add();
+            return Error;
         }
         else
         {
-            lblError.Text = Error;
+            lblError.Text = Error;//Display errors
+            return Error;
         }
     }
 
     protected void btnRegister_Click(object sender, EventArgs e)
     {
-        add();
+        string Error = add();
+        if (Error == "")
+        { Response.Redirect("Default.aspx"); }
+    }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
         Response.Redirect("Default.aspx");
     }
 }

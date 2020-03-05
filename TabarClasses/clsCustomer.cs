@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Security.Cryptography;
 
 namespace TabarClasses
 {
@@ -13,8 +16,14 @@ namespace TabarClasses
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int PhoneNo { get; set; }
+        public string Password { get; set; }
 
-        public String Valid(string HouseNoString, string HouseCounty_, string PostCode_, string HouseStreet_, string EMail_, string FirstName_, string LastName_, string PhoneNoString)
+        public bool Find(int Id)
+        {
+            if (Id == CustomerNo) { return true; }
+            else { return false; }
+        }
+        public string Valid(string HouseNoString, string HouseCounty_, string PostCode_, string HouseStreet_, string EMail_, string FirstName_, string LastName_, string PhoneNoString, string Password_, string PasswordConfirm)
         {
             String Error = "";
             Int32 PhoneNo_ = 1111111;
@@ -27,11 +36,16 @@ namespace TabarClasses
             }
             catch
             {
-                Error = "Phone and house numbers must be integers ";
+                Error = "Phone and house numbers must be integers </br>";
+            }
+
+            if (Password_ != PasswordConfirm && Password != "")
+            {
+                Error = Error + "Passwords must match and cannot be blank </br>";
             }
 
             Error = Error + clsValidate.ValidatePhone(PhoneNo_);
-            Error = Error + clsValidate.ValidateName(FirstName_, LastName);
+            Error = Error + clsValidate.ValidateName(FirstName_, LastName_);
             Error = Error + clsValidate.ValidateEmail(EMail_);
             Error = Error + clsValidate.ValidateAddress(HouseNo_,PostCode_,HouseStreet_);
 

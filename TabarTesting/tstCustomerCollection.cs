@@ -22,14 +22,14 @@ namespace TabarTesting
             clsCustomerCollection AllCustomers = new clsCustomerCollection();
             List<clsCustomer> TestList = new List<clsCustomer>();
             clsCustomer TestItem = new clsCustomer();
-            TestItem.Email = "h@h.com";
+            TestItem.EMail = "h@h.com";
             TestItem.FirstName = "HHH";
             TestItem.HouseCounty = "Leicestershire";
             TestItem.HouseNo = 100;
-            TestItem.HousePostcode = "LE27DJ";
+            TestItem.PostCode = "LE27DJ";
             TestItem.HouseStreet = "Main Street";
             TestItem.LastName = "Hjhj";
-            TestItem.PhoneNumber = 123456789;
+            TestItem.PhoneNo = 123456789;
 
             TestList.Add(TestItem);
             AllCustomers.CustomerList = TestList;
@@ -38,11 +38,39 @@ namespace TabarTesting
         }
 
         [TestMethod]
+        public void DeleteMethodOK()
+        {
+            clsCustomerCollection AllCustomers = new clsCustomerCollection();
+            clsCustomer TestCustomer = new clsCustomer();
+
+            Int32 PK = 0;
+
+            TestCustomer.HouseNo = 1;
+            TestCustomer.HouseCounty = "Leicestershire";
+            TestCustomer.PostCode = "ABCDE";
+            TestCustomer.HouseStreet = "1 main street";
+            TestCustomer.EMail = "h@h.com";
+            TestCustomer.FirstName = "John";
+            TestCustomer.LastName = "Smith";
+            TestCustomer.PhoneNo = 1234567;
+            TestCustomer.Password = "hhhh";
+
+            AllCustomers.ThisCustomer = TestCustomer;
+            PK = AllCustomers.Add();
+            TestCustomer.CustomerNo = PK;
+
+            AllCustomers.Delete(PK);
+
+            Boolean Found = AllCustomers.ThisCustomer.Find(PK);
+            Assert.IsFalse(Found);
+        }
+
+        /*[TestMethod]
         public void GetCustomerOK()
         {
             clsCustomerCollection AllCustomers = new clsCustomerCollection();
             List<clsCustomer> TestList = new List<clsCustomer>();
             Assert.AreNotEqual(AllCustomers.GetCustomer(0), TestList);
-        }
+        }*/
     }
 }

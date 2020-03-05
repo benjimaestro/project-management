@@ -31,8 +31,8 @@
         <asp:Label ID="Label10" runat="server" style="z-index: 1; left: 10px; top: 580px; position: absolute" Text="House Number"></asp:Label>
         <asp:TextBox ID="txtHouseNo" runat="server" style="z-index: 1; left: 10px; top: 600px; position: absolute" TextMode="Number"></asp:TextBox>
         <asp:Button ID="btnRegister" runat="server" style="z-index: 1; left: 10px; top: 630px; position: absolute; right: 1114px;" Text="Register" OnClick="btnRegister_Click" />
-        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 90px; top: 630px; position: absolute" Text="Cancel" />
-        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 165px; top: 82px; position: absolute; height: 195px; width: 672px" Font-Bold="True" ForeColor="Red"></asp:Label>
+        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 90px; top: 630px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 254px; top: 82px; position: absolute; height: 195px; width: 672px" Font-Bold="True" ForeColor="Red"></asp:Label>
     </form>
 </body>
 </html>
