@@ -16,7 +16,7 @@
         <asp:Button ID="btnSearch" runat="server" style="z-index: 1; left: 13px; top: 350px; position: absolute" Text="Search" />
         <asp:Button ID="btnClearFilter" runat="server" style="z-index: 1; left: 87px; top: 350px; position: absolute" Text="Show all" />
         <asp:Button ID="btnAdd" runat="server" style="z-index: 1; left: 14px; top: 388px; position: absolute" Text="Add" OnClick="btnAdd_Click" />
-        <asp:Button ID="btnEdit" runat="server" style="z-index: 1; left: 57px; top: 388px; position: absolute" Text="Edit" />
+        <asp:Button ID="btnEdit" runat="server" style="z-index: 1; left: 57px; top: 388px; position: absolute" Text="Edit" OnClick="btnEdit_Click" />
         <asp:Button ID="btnDelete" runat="server" style="z-index: 1; left: 106px; top: 388px; position: absolute" Text="Delete" OnClick="btnDelete_Click" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 15px; top: 431px; position: absolute" ForeColor="Red"></asp:Label>
     </form>
