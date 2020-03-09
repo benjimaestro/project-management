@@ -79,6 +79,18 @@ namespace TabarClasses
                 Index++;
             }
         }
+        public void FindEMail(string EMail)
+        {
+            Int32 Index = 0;
+            while (mCustomerList.Count > Index)
+            {
+                if (mCustomerList[Index].EMail== EMail)
+                {
+                    ThisCustomer = mCustomerList[Index];
+                }
+                Index++;
+            }
+        }
 
         public clsCustomerCollection()
         {
@@ -107,11 +119,13 @@ namespace TabarClasses
                 Customer.CustomerNo = Convert.ToInt32(DB.DataTable.Rows[Index]["Id"]);
                 Customer.PostCode = Convert.ToString(DB.DataTable.Rows[Index]["HousePostcode"]);
                 Customer.HouseNo = Convert.ToInt32(DB.DataTable.Rows[Index]["HouseNo"]);
+                Customer.PhoneNo = Convert.ToInt32(DB.DataTable.Rows[Index]["PhoneNo"]);
                 Customer.HouseCounty = Convert.ToString(DB.DataTable.Rows[Index]["HouseCounty"]);
                 Customer.HouseStreet = Convert.ToString(DB.DataTable.Rows[Index]["HouseStreet"]);
                 Customer.EMail = Convert.ToString(DB.DataTable.Rows[Index]["EMail"]);
                 Customer.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
                 Customer.LastName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
+                Customer.Password = Convert.ToString(DB.DataTable.Rows[Index]["HashPassword"]);
 
                 mCustomerList.Add(Customer);
 

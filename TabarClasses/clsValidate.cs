@@ -54,5 +54,18 @@ namespace TabarClasses
             }
             return Error;
         }
+        public static string ValidatePassword(string Password, string PasswordConfirm)
+        {
+            string Error = "";
+            if (Password == "" || Password == " ")
+            {
+                Error = Error + " Password cannot be blank <br />";
+            }
+            if (Password != PasswordConfirm)
+            {
+                Error = Error + " Passwords must match <br />";
+            }
+            return Error;
+        }
     }
 }
