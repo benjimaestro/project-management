@@ -68,11 +68,7 @@ namespace TabarClasses
                 Error = "Phone and house numbers must be integers </br>";
             }
 
-            if (Password_ != PasswordConfirm && Password != "")
-            {
-                Error = Error + "Passwords must match and cannot be blank </br>";
-            }
-
+            Error = Error + clsValidate.ValidatePassword(Password_,PasswordConfirm);
             Error = Error + clsValidate.ValidatePhone(PhoneNo_);
             Error = Error + clsValidate.ValidateName(FirstName_, LastName_);
             Error = Error + clsValidate.ValidateEmail(EMail_);

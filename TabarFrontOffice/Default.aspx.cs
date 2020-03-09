@@ -16,7 +16,7 @@ public partial class _Default : System.Web.UI.Page
 
     void DisplayCustomers()
     {
-        TabarClasses.clsCustomerCollection Customers = new TabarClasses.clsCustomerCollection();
+        clsCustomerCollection Customers = new clsCustomerCollection();
         lstCustomers.DataSource = Customers.CustomerList;
         lstCustomers.DataValueField = "CustomerNo";
         lstCustomers.DataTextField = "EMail";
@@ -26,6 +26,7 @@ public partial class _Default : System.Web.UI.Page
     protected void btnAdd_Click(object sender, EventArgs e)
     {
         Session["CustomerNo"] = -1;
+        Session["Mode"] = "StaffView";
         Response.Redirect("Customer.aspx");
     }
 
@@ -48,6 +49,7 @@ public partial class _Default : System.Web.UI.Page
         {
             CustomerNo = Convert.ToInt32(lstCustomers.SelectedValue);
             Session["CustomerNo"] = CustomerNo;
+            Session["Mode"] = "StaffView";
             Response.Redirect("Customer.aspx");
         }
         else { lblError.Text = "Select a customer to edit"; }

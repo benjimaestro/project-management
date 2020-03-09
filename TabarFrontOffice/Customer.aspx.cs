@@ -10,9 +10,12 @@ using TabarClasses;
 public partial class Login : System.Web.UI.Page
 {
     Int32 CustomerNo;
+    string Mode;
+    string RedirectURL;
     protected void Page_Load(object sender, EventArgs e)
     {
         CustomerNo = Convert.ToInt32(Session["CustomerNo"]);
+        Mode = Convert.ToString(Session["Mode"]);
         if (CustomerNo != -1)
         {
             if (IsPostBack == false)
@@ -28,10 +31,12 @@ public partial class Login : System.Web.UI.Page
                 txtHouseCounty.Text = Customers.ThisCustomer.HouseCounty;
                 txtHouseStreet.Text = Customers.ThisCustomer.HouseStreet;
                 txtEmail.Text = Customers.ThisCustomer.EMail;
-                lblError.Text = Convert.ToString(CustomerNo);
             }
         }
         else { lblTitle.Text = "Register"; }
+        if (Mode == "StaffView") { RedirectURL = "Default.aspx"; }
+        if (Mode == "CustomerView") { RedirectURL = "CustomerMenu.aspx"; }
+        if (Mode == "GuestView") { RedirectURL = "Login.aspx"; }
         //if (IsPostBack == false) {  }
     }
 
@@ -84,7 +89,8 @@ public partial class Login : System.Web.UI.Page
             Customers.ThisCustomer.EMail = txtEmail.Text;
             Customers.ThisCustomer.Password = Customers.GetHashPassword(txtPassword.Text);//Hash password before adding
             Customers.Update();
-            Response.Redirect("Default.aspx");
+            Session["CustomerNo"] = Customers.ThisCustomer.CustomerNo;
+            Response.Redirect(RedirectURL);
             return Error;
         }
         else
@@ -99,17 +105,34 @@ public partial class Login : System.Web.UI.Page
         if (CustomerNo == -1)
         {
             string Error = add();
-            if (Error == "") { Response.Redirect("Default.aspx"); }
+            if (Error == "") 
+            {
+                if (Error == "")
+                {
+                    if (RedirectURL != "Default.aspx")
+                    {
+                        RedirectURL = "Login.aspx";
+                    }
+                    Response.Redirect(RedirectURL);
+                }
+            }
         }
         else
         {
             string Error = update();
-            if (Error == "") { Response.Redirect("Default.aspx"); }
+            if (Error == "")
+            {
+                if (RedirectURL == "Login.aspx")
+                {
+                    RedirectURL = "CustomerMenu.aspx";
+                }
+                Response.Redirect(RedirectURL);
+            }
         }
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Default.aspx");
+        Response.Redirect(RedirectURL);
     }
 }
