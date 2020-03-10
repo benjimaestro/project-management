@@ -7,6 +7,7 @@ namespace TabarClasses
 {
     public class clsCustomer
     {
+        //Set customer properties so they can be accessed and modified from the pages
         public int CustomerNo { get { return mCustomerNo; } set { mCustomerNo = value; } }
         public int HouseNo { get { return mHouseNo; } set { mHouseNo = value; } }
         public string HouseCounty { get { return mHouseCounty; } set { mHouseCounty = value; } }
@@ -18,6 +19,7 @@ namespace TabarClasses
         public int PhoneNo { get { return mPhoneNo; } set { mPhoneNo = value; } }
         public string Password { get { return mPassword; } set { mPassword = value; } }
 
+        //Set private variables
         private Int32 mCustomerNo;
         private Int32 mHouseNo;
         private string mHouseCounty;
@@ -31,6 +33,7 @@ namespace TabarClasses
 
         public bool Find(int Id)
         {
+            //Function to find a customer by their ID and fetch their details, then setting the private variables to those details
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("CustomerNo", Id);
             DB.Execute("sproc_tblCustomer_FilterByCustomerNo");
@@ -54,9 +57,10 @@ namespace TabarClasses
         }
         public string Valid(string HouseNoString, string HouseCounty_, string PostCode_, string HouseStreet_, string EMail_, string FirstName_, string LastName_, string PhoneNoString, string Password_, string PasswordConfirm)
         {
+            //Function that uses clsValidate to check that inputted data is valid
             String Error = "";
-            Int32 PhoneNo_ = 1111111;
-            Int32 HouseNo_ = 1;
+            Int32 PhoneNo_ = 1111111;//Placeholders to prevent crashes, these values are never saved
+            Int32 HouseNo_ = 1;//Placeholders to prevent crashes, these values are never saved
 
             try
             {

@@ -4,8 +4,10 @@ namespace TabarClasses
 {
     public class clsValidate
     {
+        //Class of validation functions
         public static string ValidatePhone(Int32 PhoneNo)
         {
+            //Function to validate phone numbers
             string Error = "";
             if (Convert.ToString(PhoneNo).Length > 11 || Convert.ToString(PhoneNo).Length < 7)
             {
@@ -16,6 +18,7 @@ namespace TabarClasses
 
         public static string ValidateEmail(string EMail)
         {
+            //Function to validate EMails, using Microsoft's System.Net.Mail
             string Error = "";
             try
             {
@@ -30,6 +33,7 @@ namespace TabarClasses
         }
         public static string ValidateName(string FirstName, string LastName)
         {
+            //Function to validate names
             string Error = "";
             if (FirstName == "" || FirstName.Length > 50 || LastName == "" || LastName.Length > 50)
             {
@@ -39,6 +43,7 @@ namespace TabarClasses
         }
         public static string ValidateAddress(int HouseNo, string PostCode, string HouseStreet)
         {
+            //Function to validate address details including house numbers, UK postcodes and street names
             string Error = "";
             if (HouseNo >= 10000 || HouseNo <= 0)
             { 
@@ -56,6 +61,7 @@ namespace TabarClasses
         }
         public static string ValidatePassword(string Password, string PasswordConfirm)
         {
+            //Function to validate passwords by making sure they're not blank and that the password and confirmation match
             string Error = "";
             if (Password == "" || Password == " ")
             {

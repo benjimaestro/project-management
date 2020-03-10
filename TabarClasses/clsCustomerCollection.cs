@@ -7,9 +7,10 @@ namespace TabarClasses
 {
     public class clsCustomerCollection
     {
+        //Set private variables
         List<clsCustomer> mCustomerList = new List<clsCustomer>();
         clsCustomer mThisCustomer = new clsCustomer();
-
+        //Set public properties so pages can access the customer list and current customer
         public List<clsCustomer> CustomerList
         {
             get { return mCustomerList; }
@@ -28,6 +29,7 @@ namespace TabarClasses
         }
         public int Add()
         {
+            //Function to call stored procedure to add details to database
             clsDataConnection DB = new clsDataConnection();
 
             //DB.AddParameter("@CustomerNo", mThisCustomer.CustomerNo);
@@ -46,6 +48,8 @@ namespace TabarClasses
 
         public int Update()
         {
+            //Function to call stored procedure to update existing row in database based on the CustomerNo property of the
+            //current clsCustomer instance that's set as ThisCustomer
             clsDataConnection DB = new clsDataConnection();
 
             DB.AddParameter("@CustomerNo", mThisCustomer.CustomerNo);
@@ -62,13 +66,9 @@ namespace TabarClasses
             return DB.Execute("sproc_tblCustomer_Update");
         }
 
-        public List<clsCustomer> GetCustomer(int v)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Find(Int32 Id)
         {
+            //Function to set ThisCustomer clsCustomer instance to whichever entry in the mCustomerList matches the ID
             Int32 Index = 0;
             while (mCustomerList.Count > Index)
             {
@@ -81,6 +81,7 @@ namespace TabarClasses
         }
         public void FindEMail(string EMail)
         {
+            //Function to set ThisCustomer clsCustomer instance to whichever entry in the mCustomerList matches the EMail
             Int32 Index = 0;
             while (mCustomerList.Count > Index)
             {
@@ -94,6 +95,7 @@ namespace TabarClasses
 
         public clsCustomerCollection()
         {
+            //Function to call stored procedure that fetches all customer records
             clsDataConnection DB = new clsDataConnection();
             DB.Execute("sproc_tblCustomer_SelectAll");
             PopulateArray(DB);
@@ -101,6 +103,7 @@ namespace TabarClasses
 
         public void ReportByEMail(string EMail)
         {
+            //Function to call stored procedure that fetches all customer records which are similar to the EMail variable which is passed in
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@EMail", EMail);
             DB.Execute("sproc_tblCustomer_FilterByEMail");
@@ -109,6 +112,8 @@ namespace TabarClasses
 
         void PopulateArray(clsDataConnection DB)
         {
+            //Function to populate mCustomerList with whatever is fetched by the stored procedure
+            //Loops over rows to set details to create clsCustomer instance for each row and give it the details
             Int32 Index = 0;
             Int32 RecordCount;
             RecordCount = DB.Count;
@@ -133,8 +138,15 @@ namespace TabarClasses
             }
         }
 
-        public string GetHashPassword(string ToHash) //Function to securely hash text with the Cryptography library
+        public string GetHashPassword(string ToHash)
         {
+            //Function to hash a string
+            //This is used so that raw passwords are not stored. That would be very bad security, as it means anyone with database
+            //access (authorized or not) can see customer passwords.
+            //Doing it this way means we can still see if a user's inputted password is the same as the one they signed up with,
+            //but without actually knowing their password.
+            //The hashing algorithm used is SHA2-512, since this is still secure (others like SHA-0,SHA-1,MD5 are no longer secure)
+            //I'm using System.Security.Cryptography from Microsoft for this as writing my own SHA2-512 algorithm would be unsafe.
             if (ToHash != "")
             {
                 SHA512Managed HashGen = new SHA512Managed();
@@ -152,6 +164,7 @@ namespace TabarClasses
 
         public void Delete(Int32 Id)
         {
+            //Function to delete an instance of a customer from the mCustomerList and DB based on provided ID
             clsDataConnection DB = new clsDataConnection();
             Int32 Index = 0;
             while (mCustomerList.Count > Index)

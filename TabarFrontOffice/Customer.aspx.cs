@@ -14,6 +14,8 @@ public partial class Login : System.Web.UI.Page
     string RedirectURL;
     protected void Page_Load(object sender, EventArgs e)
     {
+        //Runs when the page is loaded, checks session object for CustomerNo. If it's not -1, it fills the controls with the customer's details
+        //for editing. Otherwise it runs empty.
         CustomerNo = Convert.ToInt32(Session["CustomerNo"]);
         Mode = Convert.ToString(Session["Mode"]);
         if (CustomerNo != -1)
@@ -34,6 +36,8 @@ public partial class Login : System.Web.UI.Page
             }
         }
         else { lblTitle.Text = "Register"; }
+
+        //These are used for redirecting back to the correct page when either cancel or save are pressed, as staff and customers do not see the same pages
         if (Mode == "StaffView") { RedirectURL = "Default.aspx"; }
         if (Mode == "CustomerView") { RedirectURL = "CustomerMenu.aspx"; }
         if (Mode == "GuestView") { RedirectURL = "Login.aspx"; }
@@ -47,8 +51,8 @@ public partial class Login : System.Web.UI.Page
 
     string add()
     {
+        //function to take details from form to validate and then add them to the clsCustomer class so they can be added to the DB
         clsCustomerCollection Customers = new clsCustomerCollection();
-
         String Error = Customers.ThisCustomer.Valid(txtHouseNo.Text, txtHouseCounty.Text, txtPostcode.Text, txtHouseStreet.Text, txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPhoneNo.Text, txtPassword.Text, txtPasswordConfirm.Text);
         if (Error == "")
         {
@@ -73,8 +77,8 @@ public partial class Login : System.Web.UI.Page
 
     string update()
     {
+        //function to take details from form to validate and then update the customer they belong to in clsCustomer so it can be changed in the DB
         clsCustomerCollection Customers = new clsCustomerCollection();
-
         String Error = Customers.ThisCustomer.Valid(txtHouseNo.Text, txtHouseCounty.Text, txtPostcode.Text, txtHouseStreet.Text, txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPhoneNo.Text, txtPassword.Text, txtPasswordConfirm.Text);
         if (Error == "")
         {
@@ -102,6 +106,8 @@ public partial class Login : System.Web.UI.Page
 
     protected void btnRegister_Click(object sender, EventArgs e)
     {
+        //Runs when Save is clicked. Behaviour depends on if the user's intention was to register or edit existing details
+        //Redirects depend on if the user originated from Default.aspx, CustomerMenu.aspx, or Login.aspx
         if (CustomerNo == -1)
         {
             string Error = add();
@@ -133,6 +139,8 @@ public partial class Login : System.Web.UI.Page
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
+        //Runs when Cancel is clicked.
+        //Redirects depend on if the user originated from Default.aspx, CustomerMenu.aspx, or Login.aspx
         Response.Redirect(RedirectURL);
     }
 }
