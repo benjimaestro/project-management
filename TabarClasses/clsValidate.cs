@@ -4,10 +4,10 @@ namespace TabarClasses
 {
     public class clsValidate
     {
-        public static string ValidatePhone(Int32 PhoneNo)
+        public static string ValidatePhone(string PhoneNo)
         {
             string Error = "";
-            if (Convert.ToString(PhoneNo).Length > 11 || Convert.ToString(PhoneNo).Length < 7)
+            if (PhoneNo.Length > 11 || PhoneNo.Length < 7)
             {
                 Error = "Phone number must be between 7 and 11 characters <br />";
             }
@@ -20,7 +20,7 @@ namespace TabarClasses
             try
             {
                 var addr = new System.Net.Mail.MailAddress(EMail);
-                if (EMail.Length > 50) { Error = "Must be under 50 characters <br />"; }
+                if (EMail.Length > 100 || EMail.Length < 6) { Error = "Must be under 100 characters and over 6 characters <br />"; }
             }
             catch
             {
@@ -37,18 +37,37 @@ namespace TabarClasses
             }
             return Error;
         }
-        public static string ValidateAddress(int HouseNo, string PostCode, string HouseStreet)
+        public static string ValidateHouseNo(int HouseNo)
         {
             string Error = "";
             if (HouseNo >= 10000 || HouseNo <= 0)
             { 
-                Error = Error + " House number cannot be 0 or below and cannot be 10000 or above <br />";
+                Error = Error + " House number must be between 1-10000 <br />";
             }
+            return Error;
+        }
+        public static string ValidatePostCode(string PostCode)
+        {
+            string Error = "";
             if (PostCode.Length > 7 || PostCode.Length < 4)
             {
                 Error = Error + " Postcode must be between 4-7 characters <br />";
             }
-            if (PostCode.Length > 100 || PostCode.Length < 1)
+            return Error;
+        }
+        public static string ValidateCounty(string PostCode)
+        {
+            string Error = "";
+            if (PostCode.Length > 26 || PostCode.Length < 4)
+            {
+                Error = Error + " County must be between 4 and 26 characters <br />";
+            }
+            return Error;
+        }
+        public static string ValidateStreet(string HouseStreet)
+        {
+            string Error = "";
+            if (HouseStreet.Length > 100 || HouseStreet.Length < 1)
             {
                 Error = Error + " Address must be between 1-50 characters <br />";
             }

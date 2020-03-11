@@ -15,18 +15,18 @@ namespace TabarClasses
         public string EMail { get { return mEMail; } set { mEMail = value; } }
         public string FirstName { get { return mFirstName; } set { mFirstName = value; } }
         public string LastName { get { return mLastName; } set { mLastName = value; } }
-        public int PhoneNo { get { return mPhoneNo; } set { mPhoneNo = value; } }
+        public string PhoneNo { get { return mPhoneNo; } set { mPhoneNo = value; } }
         public string Password { get { return mPassword; } set { mPassword = value; } }
 
-        private Int32 mCustomerNo;
-        private Int32 mHouseNo;
+        private int mCustomerNo;
+        private int mHouseNo;
         private string mHouseCounty;
         private string mPostCode;
         private string mHouseStreet;
         private string mEMail;
         private string mFirstName;
         private string mLastName;
-        private Int32 mPhoneNo;
+        private string mPhoneNo;
         private string mPassword;
 
         public bool Find(int Id)
@@ -45,7 +45,7 @@ namespace TabarClasses
                 mEMail =        Convert.ToString(DB.DataTable.Rows[0]["EMail"]);
                 mFirstName =    Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
                 mLastName =     Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
-                mPhoneNo =      Convert.ToInt32(DB.DataTable.Rows[0]["PhoneNo"]);
+                mPhoneNo =      Convert.ToString(DB.DataTable.Rows[0]["PhoneNo"]);
                 mPassword =     Convert.ToString(DB.DataTable.Rows[0]["HashPassword"]);
 
                 return true;
@@ -55,13 +55,13 @@ namespace TabarClasses
         public string Valid(string HouseNoString, string HouseCounty_, string PostCode_, string HouseStreet_, string EMail_, string FirstName_, string LastName_, string PhoneNoString, string Password_, string PasswordConfirm)
         {
             String Error = "";
-            Int32 PhoneNo_ = 1111111;
-            Int32 HouseNo_ = 1;
+            string PhoneNo_ = "1111111";
+            int HouseNo_ = 1;
 
             try
             {
                 HouseNo_ = Convert.ToInt32(HouseNoString);
-                PhoneNo_ = Convert.ToInt32(PhoneNoString);
+                PhoneNo_ = PhoneNoString;
             }
             catch
             {
@@ -72,7 +72,9 @@ namespace TabarClasses
             Error = Error + clsValidate.ValidatePhone(PhoneNo_);
             Error = Error + clsValidate.ValidateName(FirstName_, LastName_);
             Error = Error + clsValidate.ValidateEmail(EMail_);
-            Error = Error + clsValidate.ValidateAddress(HouseNo_,PostCode_,HouseStreet_);
+            Error = Error + clsValidate.ValidateHouseNo(HouseNo_);
+            Error = Error + clsValidate.ValidatePostCode(PostCode_);
+            Error = Error + clsValidate.ValidateStreet(HouseStreet_);
 
             return Error;
         }

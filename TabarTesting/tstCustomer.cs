@@ -151,7 +151,7 @@ namespace TabarTesting
 
             clsCustomer Customer = new clsCustomer();
 
-            Int32 TestData = 12345678;
+            string TestData = "12345678";
 
             Customer.PhoneNo = TestData;
 
@@ -330,7 +330,7 @@ namespace TabarTesting
             Int32 CustomerNo = 48;
 
             Found = Customer.Find(CustomerNo);
-            if (Customer.PhoneNo != 99999999)
+            if (Customer.PhoneNo != "99999999")
             {
                 OK = false;
             }

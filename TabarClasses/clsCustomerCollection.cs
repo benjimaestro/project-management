@@ -119,7 +119,7 @@ namespace TabarClasses
                 Customer.CustomerNo = Convert.ToInt32(DB.DataTable.Rows[Index]["Id"]);
                 Customer.PostCode = Convert.ToString(DB.DataTable.Rows[Index]["HousePostcode"]);
                 Customer.HouseNo = Convert.ToInt32(DB.DataTable.Rows[Index]["HouseNo"]);
-                Customer.PhoneNo = Convert.ToInt32(DB.DataTable.Rows[Index]["PhoneNo"]);
+                Customer.PhoneNo = Convert.ToString(DB.DataTable.Rows[Index]["PhoneNo"]);
                 Customer.HouseCounty = Convert.ToString(DB.DataTable.Rows[Index]["HouseCounty"]);
                 Customer.HouseStreet = Convert.ToString(DB.DataTable.Rows[Index]["HouseStreet"]);
                 Customer.EMail = Convert.ToString(DB.DataTable.Rows[Index]["EMail"]);

@@ -24,7 +24,7 @@ public partial class Login : System.Web.UI.Page
                 clsCustomerCollection Customers = new clsCustomerCollection();
                 Customers.Find(CustomerNo);
                 txtHouseNo.Text = Convert.ToString(Customers.ThisCustomer.HouseNo);
-                txtPhoneNo.Text = Convert.ToString(Customers.ThisCustomer.PhoneNo);
+                txtPhoneNo.Text = Customers.ThisCustomer.PhoneNo;
                 txtFirstName.Text = Customers.ThisCustomer.FirstName;
                 txtLastName.Text = Customers.ThisCustomer.LastName;
                 txtPostcode.Text = Customers.ThisCustomer.PostCode;
@@ -53,7 +53,7 @@ public partial class Login : System.Web.UI.Page
         if (Error == "")
         {
             Customers.ThisCustomer.HouseNo = Convert.ToInt32(txtHouseNo.Text);
-            Customers.ThisCustomer.PhoneNo = Convert.ToInt32(txtPhoneNo.Text);
+            Customers.ThisCustomer.PhoneNo = txtPhoneNo.Text;
             Customers.ThisCustomer.FirstName = txtFirstName.Text;
             Customers.ThisCustomer.LastName = txtLastName.Text;
             Customers.ThisCustomer.PostCode = txtPostcode.Text;
@@ -80,7 +80,7 @@ public partial class Login : System.Web.UI.Page
         {
             Customers.Find(CustomerNo);
             Customers.ThisCustomer.HouseNo = Convert.ToInt32(txtHouseNo.Text);
-            Customers.ThisCustomer.PhoneNo = Convert.ToInt32(txtPhoneNo.Text);
+            Customers.ThisCustomer.PhoneNo = txtPhoneNo.Text;
             Customers.ThisCustomer.FirstName = txtFirstName.Text;
             Customers.ThisCustomer.LastName = txtLastName.Text;
             Customers.ThisCustomer.PostCode = txtPostcode.Text;

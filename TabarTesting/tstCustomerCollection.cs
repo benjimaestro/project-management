@@ -29,7 +29,7 @@ namespace TabarTesting
             TestItem.PostCode = "LE27DJ";
             TestItem.HouseStreet = "Main Street";
             TestItem.LastName = "Hjhj";
-            TestItem.PhoneNo = 123456789;
+            TestItem.PhoneNo = "123456789";
 
             TestList.Add(TestItem);
             AllCustomers.CustomerList = TestList;
@@ -52,7 +52,7 @@ namespace TabarTesting
             TestCustomer.EMail = "h@h.com";
             TestCustomer.FirstName = "John";
             TestCustomer.LastName = "Smith";
-            TestCustomer.PhoneNo = 1234567;
+            TestCustomer.PhoneNo = "1234567";;
             TestCustomer.Password = "hhhh";
 
             AllCustomers.ThisCustomer = TestCustomer;
@@ -79,7 +79,7 @@ namespace TabarTesting
             TestCustomer.EMail = "h@h.com";
             TestCustomer.FirstName = "John";
             TestCustomer.LastName = "Smith";
-            TestCustomer.PhoneNo = 1234567;
+            TestCustomer.PhoneNo = "1234567";;
             TestCustomer.Password = "hhhh";
 
             AllCustomers.ThisCustomer = TestCustomer;
@@ -93,7 +93,7 @@ namespace TabarTesting
             TestCustomer.EMail = "hHHHHHH@h.com";
             TestCustomer.FirstName = "HHHJohn";
             TestCustomer.LastName = "HHHSmith";
-            TestCustomer.PhoneNo = 91234567;
+            TestCustomer.PhoneNo = "91234567";
             TestCustomer.Password = "HHHHHHH";
 
             AllCustomers.ThisCustomer = TestCustomer;
