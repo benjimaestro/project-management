@@ -12,7 +12,7 @@
         <div>
         </div>
         <asp:ListBox ID="lstCustomers" runat="server" style="z-index: 1; left: 10px; top: 34px; position: absolute; height: 249px; width: 471px"></asp:ListBox>
-        <asp:TextBox ID="txtFilter" runat="server" style="z-index: 1; left: 11px; top: 316px; position: absolute; width: 140px;"></asp:TextBox>
+        <asp:TextBox ID="txtFilter" runat="server" style="z-index: 1; left: 11px; top: 316px; position: absolute; width: 140px;" MaxLength="100"></asp:TextBox>
         <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 13px; top: 292px; position: absolute" Text="Enter EMail"></asp:Label>
         <asp:Button ID="btnSearch" runat="server" style="z-index: 1; left: 13px; top: 350px; position: absolute" Text="Search" OnClick="btnSearch_Click" />
         <asp:Button ID="btnClearFilter" runat="server" style="z-index: 1; left: 89px; top: 350px; position: absolute" Text="Show all" OnClick="btnClearFilter_Click" />

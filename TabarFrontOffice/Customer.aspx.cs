@@ -14,6 +14,9 @@ public partial class Login : System.Web.UI.Page
     string RedirectURL;
     protected void Page_Load(object sender, EventArgs e)
     {
+        //Called upon page load
+        //Sets customer number to whatever was passed in the session object, as well as a session object that depends on which page the user originated from
+        //so that they can be redirected to the correct page
         CustomerNo = Convert.ToInt32(Session["CustomerNo"]);
         Mode = Convert.ToString(Session["Mode"]);
         if (CustomerNo != -1)
@@ -40,16 +43,20 @@ public partial class Login : System.Web.UI.Page
         //if (IsPostBack == false) {  }
     }
 
-    protected void txtPasswordConfirm_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
     string add()
     {
+        //Function to add a customer to the clsCustomerCollection list and then call a function to add it to the DB
+        //If it fails, an error is displayed
+        String Error = "";
+        clsCustomerCollection PreCustomers = new clsCustomerCollection();
+        PreCustomers.FindEMail(txtEmail.Text);
+        if (PreCustomers.ThisCustomer.EMail != null)
+        {
+            Error = Error + "EMail already in use </br>";
+        }
         clsCustomerCollection Customers = new clsCustomerCollection();
 
-        String Error = Customers.ThisCustomer.Valid(txtHouseNo.Text, txtHouseCounty.Text, txtPostcode.Text, txtHouseStreet.Text, txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPhoneNo.Text, txtPassword.Text, txtPasswordConfirm.Text);
+        Error = Error + Customers.ThisCustomer.Valid(txtHouseNo.Text, txtHouseCounty.Text, txtPostcode.Text, txtHouseStreet.Text, txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPhoneNo.Text, txtPassword.Text, txtPasswordConfirm.Text);
         if (Error == "")
         {
             Customers.ThisCustomer.HouseNo = Convert.ToInt32(txtHouseNo.Text);
@@ -73,10 +80,19 @@ public partial class Login : System.Web.UI.Page
 
     string update()
     {
+        //Function to add a customer to the clsCustomerCollection list and then call a function to modify that customer's existing details in the DB
+        //If it fails, an error is displayed
+        String Error = "";
+        clsCustomerCollection PreCustomers = new clsCustomerCollection();
         clsCustomerCollection Customers = new clsCustomerCollection();
+        PreCustomers.FindEMail(txtEmail.Text);
+        Customers.Find(CustomerNo);
+        if (PreCustomers.ThisCustomer.EMail != null && PreCustomers.ThisCustomer.EMail != Customers.ThisCustomer.EMail)
+        {
+            Error = Error + "EMail already in use </br>";
+        }
 
-        String Error = Customers.ThisCustomer.Valid(txtHouseNo.Text, txtHouseCounty.Text, txtPostcode.Text, txtHouseStreet.Text, txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPhoneNo.Text, txtPassword.Text, txtPasswordConfirm.Text);
-        if (Error == "")
+        Error = Error + Customers.ThisCustomer.Valid(txtHouseNo.Text, txtHouseCounty.Text, txtPostcode.Text, txtHouseStreet.Text, txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPhoneNo.Text, txtPassword.Text, txtPasswordConfirm.Text); if (Error == "")
         {
             Customers.Find(CustomerNo);
             Customers.ThisCustomer.HouseNo = Convert.ToInt32(txtHouseNo.Text);
@@ -102,6 +118,8 @@ public partial class Login : System.Web.UI.Page
 
     protected void btnRegister_Click(object sender, EventArgs e)
     {
+        //Called when save button is pressed, runs add/update function depending on what the user pressed to get to this page
+        //Redirects back to whereever the user originated from
         if (CustomerNo == -1)
         {
             string Error = add();
@@ -133,6 +151,7 @@ public partial class Login : System.Web.UI.Page
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
+        //Redirects to wherever the user originated from
         Response.Redirect(RedirectURL);
     }
 }

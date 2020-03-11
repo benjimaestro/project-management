@@ -6,6 +6,7 @@ namespace TabarClasses
     {
         public static string ValidatePhone(string PhoneNo)
         {
+            //Makes sure inputted data is correct for a phone number
             string Error = "";
             if (PhoneNo.Length > 11 || PhoneNo.Length < 7)
             {
@@ -16,6 +17,7 @@ namespace TabarClasses
 
         public static string ValidateEmail(string EMail)
         {
+            //Makes sure inputted data is correct for an EMail
             string Error = "";
             try
             {
@@ -30,6 +32,7 @@ namespace TabarClasses
         }
         public static string ValidateName(string FirstName, string LastName)
         {
+            //Makes sure inputted data is correct for first and last names
             string Error = "";
             if (FirstName == "" || FirstName.Length > 50 || LastName == "" || LastName.Length > 50)
             {
@@ -39,6 +42,7 @@ namespace TabarClasses
         }
         public static string ValidateHouseNo(int HouseNo)
         {
+            //Makes sure inputted data is correct for UK house numbers
             string Error = "";
             if (HouseNo >= 10000 || HouseNo <= 0)
             { 
@@ -48,6 +52,7 @@ namespace TabarClasses
         }
         public static string ValidatePostCode(string PostCode)
         {
+            //Makes sure inputted data is correct for a UK postcode
             string Error = "";
             if (PostCode.Length > 7 || PostCode.Length < 4)
             {
@@ -57,6 +62,7 @@ namespace TabarClasses
         }
         public static string ValidateCounty(string PostCode)
         {
+            //Makes sure inputted data is correct for a UK county name
             string Error = "";
             if (PostCode.Length > 26 || PostCode.Length < 4)
             {
@@ -66,6 +72,7 @@ namespace TabarClasses
         }
         public static string ValidateStreet(string HouseStreet)
         {
+            //Makes sure inputted data is correct for a street name
             string Error = "";
             if (HouseStreet.Length > 100 || HouseStreet.Length < 1)
             {
@@ -75,6 +82,7 @@ namespace TabarClasses
         }
         public static string ValidatePassword(string Password, string PasswordConfirm)
         {
+            //Makes sure inputted passwords match and aren't blank
             string Error = "";
             if (Password == "" || Password == " ")
             {

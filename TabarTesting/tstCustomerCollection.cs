@@ -9,6 +9,8 @@ namespace TabarTesting
     [TestClass]
     public class tstCustomerCollection
     {
+        //This class tests functionality for the CustomerCollection class by running functions in an isolated way
+        //This makes it easier to debug and find issues in the code
         [TestMethod]
         public void InstanceOK()
         {

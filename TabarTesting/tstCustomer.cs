@@ -7,6 +7,8 @@ namespace TabarTesting
     [TestClass]
     public class tstCustomer
     {
+        //This class tests functionality for the Customer class by running functions in an isolated way
+        //This makes it easier to debug and find issues in the code
         [TestMethod]
         public void FindMethodOK()
         {
@@ -336,6 +338,7 @@ namespace TabarTesting
             }
             Assert.IsTrue(OK);
         }
+        [TestMethod]
         public void TestPasswordFound()
         {
 

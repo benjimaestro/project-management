@@ -9,6 +9,9 @@ namespace TabarTesting
     [TestClass]
     public class tstValidation
     {
+        //This class tests functionality for the Validation class by running functions in an isolated way
+        //This makes it easier to debug and find issues in the code
+        //For each function in clsValidation, there is a test that checks different possible inputs to see how the function reacts
         [TestMethod]
         public void InstanceOKValidate()
         {
