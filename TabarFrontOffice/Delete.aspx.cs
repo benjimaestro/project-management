@@ -16,7 +16,7 @@ public partial class Delete : System.Web.UI.Page
         clsCustomerCollection Customers = new clsCustomerCollection();
         Customers.Find(CustomerNo);
         lblDelete.Text = "Are you sure you want to delete account " + Customers.ThisCustomer.EMail;
-        if (Convert.ToString(Session["Mode"]) == "StaffView") { RedirectURL = "Default.aspx"; }
+        if (Convert.ToString(Session["Mode"]) == "StaffView") { RedirectURL = "StaffMenu.aspx"; }
         else { RedirectURL = "CustomerMenu.aspx"; }
     }
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="StaffMenu.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html>
 
@@ -8,6 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:Label ID="Label2" runat="server" Font-Size="X-Large" style="z-index: 1; left: 10px; top: 5px; position: absolute; width: 336px" Text="Manage Customers"></asp:Label>
         <div>
         </div>
         <asp:ListBox ID="lstCustomers" runat="server" style="z-index: 1; left: 10px; top: 34px; position: absolute; height: 249px; width: 471px"></asp:ListBox>

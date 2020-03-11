@@ -34,7 +34,7 @@ public partial class Login : System.Web.UI.Page
             }
         }
         else { lblTitle.Text = "Register"; }
-        if (Mode == "StaffView") { RedirectURL = "Default.aspx"; }
+        if (Mode == "StaffView") { RedirectURL = "StaffMenu.aspx"; }
         if (Mode == "CustomerView") { RedirectURL = "CustomerMenu.aspx"; }
         if (Mode == "GuestView") { RedirectURL = "Login.aspx"; }
         //if (IsPostBack == false) {  }
@@ -109,7 +109,7 @@ public partial class Login : System.Web.UI.Page
             {
                 if (Error == "")
                 {
-                    if (RedirectURL != "Default.aspx")
+                    if (RedirectURL != "StaffMenu.aspx")
                     {
                         RedirectURL = "Login.aspx";
                     }
