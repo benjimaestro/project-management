@@ -11,4 +11,24 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btnApplyCarRDate_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btnFilterCMNumber_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btnEdit_Click1(object sender, EventArgs e)
+    {
+
+    }
 }
