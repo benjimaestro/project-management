@@ -44,37 +44,95 @@ namespace TabarClasses
             return DB.Execute("sproc_tblCustomer_Insert");
         }
 
+        public int Update()
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@CustomerNo", mThisCustomer.CustomerNo);
+            DB.AddParameter("@HouseNo", mThisCustomer.HouseNo);
+            DB.AddParameter("@HouseCounty", mThisCustomer.HouseCounty);
+            DB.AddParameter("@PostCode", mThisCustomer.PostCode);
+            DB.AddParameter("@HouseStreet", mThisCustomer.HouseStreet);
+            DB.AddParameter("@EMail", mThisCustomer.EMail);
+            DB.AddParameter("@FirstName", mThisCustomer.FirstName);
+            DB.AddParameter("@LastName", mThisCustomer.LastName);
+            DB.AddParameter("@PhoneNo", mThisCustomer.PhoneNo);
+            DB.AddParameter("@HashPassword", mThisCustomer.Password);
+
+            return DB.Execute("sproc_tblCustomer_Update");
+        }
+
         public List<clsCustomer> GetCustomer(int v)
         {
             throw new NotImplementedException();
         }
 
-        public clsCustomerCollection()
+        public void Find(Int32 Id)
         {
             Int32 Index = 0;
-            Int32 Recordcount = 0;
+            while (mCustomerList.Count > Index)
+            {
+                if (mCustomerList[Index].CustomerNo == Id)
+                {
+                    ThisCustomer = mCustomerList[Index];
+                }
+                Index++;
+            }
+        }
+        public void FindEMail(string EMail)
+        {
+            Int32 Index = 0;
+            while (mCustomerList.Count > Index)
+            {
+                if (mCustomerList[Index].EMail== EMail)
+                {
+                    ThisCustomer = mCustomerList[Index];
+                }
+                Index++;
+            }
+        }
+
+        public clsCustomerCollection()
+        {
             clsDataConnection DB = new clsDataConnection();
-
             DB.Execute("sproc_tblCustomer_SelectAll");
-            Recordcount = DB.Count;
+            PopulateArray(DB);
+        }
 
-            while (Index < Recordcount)
+        public void ReportByEMail(string EMail)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@EMail", EMail);
+            DB.Execute("sproc_tblCustomer_FilterByEMail");
+            PopulateArray(DB);
+        }
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            Int32 Index = 0;
+            Int32 RecordCount;
+            RecordCount = DB.Count;
+            mCustomerList = new List<clsCustomer>();
+            while (Index < RecordCount)
             {
                 clsCustomer Customer = new clsCustomer();
                 Customer.CustomerNo = Convert.ToInt32(DB.DataTable.Rows[Index]["Id"]);
                 Customer.PostCode = Convert.ToString(DB.DataTable.Rows[Index]["HousePostcode"]);
                 Customer.HouseNo = Convert.ToInt32(DB.DataTable.Rows[Index]["HouseNo"]);
+                Customer.PhoneNo = Convert.ToString(DB.DataTable.Rows[Index]["PhoneNo"]);
                 Customer.HouseCounty = Convert.ToString(DB.DataTable.Rows[Index]["HouseCounty"]);
                 Customer.HouseStreet = Convert.ToString(DB.DataTable.Rows[Index]["HouseStreet"]);
                 Customer.EMail = Convert.ToString(DB.DataTable.Rows[Index]["EMail"]);
                 Customer.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
                 Customer.LastName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
+                Customer.Password = Convert.ToString(DB.DataTable.Rows[Index]["HashPassword"]);
 
                 mCustomerList.Add(Customer);
 
                 Index++;
             }
         }
+
         public string GetHashPassword(string ToHash) //Function to securely hash text with the Cryptography library
         {
             if (ToHash != "")
@@ -91,9 +149,20 @@ namespace TabarClasses
             }
             else { return ""; }
         }
+
         public void Delete(Int32 Id)
         {
             clsDataConnection DB = new clsDataConnection();
+            Int32 Index = 0;
+            while (mCustomerList.Count > Index)
+            {
+                if (mCustomerList[Index].CustomerNo == Id)
+                {
+                    mCustomerList.RemoveAt(Index);
+                }
+                Index++;
+            }
+
             DB.AddParameter("@CustomerNo", Id);
             DB.Execute("sproc_tblCustomer_Delete");
         }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Customer.aspx.cs" Inherits="Login" %>
 
 <!DOCTYPE html>
 
@@ -30,9 +30,10 @@
         <asp:TextBox ID="txtHouseStreet" runat="server" style="z-index: 1; left: 10px; top: 540px; position: absolute"></asp:TextBox>
         <asp:Label ID="Label10" runat="server" style="z-index: 1; left: 10px; top: 580px; position: absolute" Text="House Number"></asp:Label>
         <asp:TextBox ID="txtHouseNo" runat="server" style="z-index: 1; left: 10px; top: 600px; position: absolute" TextMode="Number"></asp:TextBox>
-        <asp:Button ID="btnRegister" runat="server" style="z-index: 1; left: 10px; top: 630px; position: absolute; right: 1114px;" Text="Register" OnClick="btnRegister_Click" />
+        <asp:Button ID="btnRegister" runat="server" style="z-index: 1; left: 10px; top: 630px; position: absolute; right: 1114px;" Text="Save" OnClick="btnRegister_Click" />
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 90px; top: 630px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 254px; top: 82px; position: absolute; height: 195px; width: 672px" Font-Bold="True" ForeColor="Red"></asp:Label>
+        <asp:Label ID="lblTitle" runat="server" Font-Size="X-Large" style="z-index: 1; left: 17px; top: 15px; position: absolute"></asp:Label>
     </form>
 </body>
 </html>
