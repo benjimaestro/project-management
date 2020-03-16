@@ -14,8 +14,9 @@
         <p>
             &nbsp;</p>
         <asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" style="z-index: 1; left: 220px; top: 100px; position: absolute" Text="Yes" />
-        <asp:Button ID="btnNo" runat="server" OnClick="btnNo_Click" style="z-index: 1; left: 433px; top: 100px; position: absolute" Text="No" />
+        <asp:Button ID="btnNo" runat="server" OnClick="btnNo_Click" style="z-index: 1; left: 433px; top: 100px; position: absolute; width: 38px;" Text="No" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 206px; top: 147px; position: absolute"></asp:Label>
+        <asp:TextBox ID="txtCarNo" runat="server" style="z-index: 1; left: 278px; top: 99px; position: absolute"></asp:TextBox>
     </form>
 </body>
 </html>
