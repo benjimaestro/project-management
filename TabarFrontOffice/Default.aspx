@@ -17,7 +17,7 @@
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 426px; top: 358px; position: absolute; height: 24px; width: 66px"></asp:Label>
         <asp:Button ID="btnAdd" runat="server" style="z-index: 1; left: 608px; top: 136px; position: absolute; width: 54px" Text="Add" OnClick="btnAdd_Click" />
         <asp:Button ID="btnEdit" runat="server" style="z-index: 1; left: 609px; top: 189px; position: absolute; width: 54px" Text="Edit" OnClick="btnEdit_Click1" />
-        <asp:Button ID="btnDelete" runat="server" style="z-index: 1; left: 607px; top: 92px; position: absolute; margin-top: 0px;" Text="Delete" OnClick="btnDelete_Click" />
+        <asp:Button ID="btnDelete" runat="server" style="z-index: 1; left: 607px; top: 92px; position: absolute; margin-top: 0px; height: 26px;" Text="Delete" OnClick="btnDelete_Click" />
         <asp:Label ID="lblFliterbyCarRDate" runat="server" style="z-index: 1; left: 266px; top: 525px; position: absolute; margin-top: 0px;" Text="Please enter car release date you want to search"></asp:Label>
         <asp:TextBox ID="txtFilterColour" runat="server" style="z-index: 1; left: 11px; top: 403px; position: absolute; width: 162px; right: 369px"></asp:TextBox>
         <asp:Button ID="btnApplyCarModel" runat="server" style="z-index: 1; left: 457px; top: 403px; position: absolute" Text="Apply" />

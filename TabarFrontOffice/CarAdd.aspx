@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="CarAdd.aspx.cs" Inherits="CarAdd" %>
 
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta charset="utf-8" />
-    <title></title>    
+    <title></title>
 </head>
 <body style="height: 643px">
     <form id="form1" runat="server">
@@ -32,7 +32,7 @@
         <p>
             &nbsp;</p>
         <p>
-            &nbsp;</p>
+            z</p>
     </form>
 
 </body>

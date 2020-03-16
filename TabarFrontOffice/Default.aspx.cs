@@ -31,4 +31,9 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
+
+    protected void btnDelete_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("CarDelete.aspx");
+    }
 }
