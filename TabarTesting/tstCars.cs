@@ -39,6 +39,35 @@ namespace TabarTesting
             //assign the data to the property 
             Assert.AreEqual(ACar.CarTypeNo, CarTypeNo);
         }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            clsCar ACar = new clsCar();
+            //create an instance of the class we want to create 
+            String Error = "";
+            //create a string variable to store the result of the validation
+            string SomeCarType = "Hatchback";
+            //Create some test data to test the method 
+            Error = ACar.Valid(SomeCarType);
+            //invoke the method 
+            Assert.AreEqual(Error, ""); 
+        }
+
+        [TestMethod]
+        public void CarTypeLessOne()
+        {
+            clsCar ACar = new clsCar();
+            //create an instance of the class we want to create 
+            String Error = "";
+            //create a string variable to store the result of the validation
+            string SomeCarType = "";
+            //Create some test data to test the method 
+            Error = ACar.Valid(SomeCarType);
+            //invoke the method 
+            Assert.AreEqual(Error, "");
+            //test to see that the result is NOT OK i.e there should be an error message 
+        }
     }  
 
 
