@@ -11,5 +11,20 @@ namespace TabarClasses
         {
 
         }
+
+        public Boolean Delete(Int32 CarNo) 
+        {
+            try
+            {
+                clsDataConnection MyDatabase = new clsDataConnection();
+                MyDatabase.AddParameter("@CarNo", CarNo);
+                MyDatabase.Execute("sproc_tblCars_Delete");
+                return true; 
+            }
+            catch
+            {
+                return false; 
+            }
+        }
     }
 }
