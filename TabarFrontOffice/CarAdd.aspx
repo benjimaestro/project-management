@@ -24,7 +24,7 @@
         </asp:DropDownList>
         <asp:Label ID="lblCarRDate" runat="server" style="z-index: 1; left: 159px; top: 398px; position: absolute" Text="Enter car release date "></asp:Label>
         <asp:TextBox ID="txtCarRDate" runat="server" style="z-index: 1; left: 303px; top: 396px; position: absolute; right: 921px;"></asp:TextBox>
-        <asp:Button ID="btnSubmit" runat="server" style="z-index: 1; left: 153px; top: 456px; position: absolute; right: 1132px;" Text="Submit " OnClick="btnSubmit_Click1" />
+        <asp:Button ID="btnSubmit" runat="server" style="z-index: 1; left: 153px; top: 456px; position: absolute; right: 1060px;" Text="Submit " OnClick="btnSubmit_Click1" />
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 440px; top: 452px; position: absolute" Text="Cancel" OnClick="btnCancel_Click1" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 157px; top: 425px; position: absolute"></asp:Label>
     </p>
@@ -32,7 +32,7 @@
         <p>
             &nbsp;</p>
         <p>
-            z</p>
+            &nbsp;</p>
     </form>
 
 </body>
