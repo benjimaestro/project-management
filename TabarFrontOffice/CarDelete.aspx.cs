@@ -16,7 +16,7 @@ public partial class CarDelete : System.Web.UI.Page
     {
         //this function handles the click event of the Yes Button 
         //create an instance of the  class clsCars called MyCars
-        
+        clsCarsCollection = MyCars = new clsCarsCollection(); 
     }
 
     protected void btnNo_Click(object sender, EventArgs e)
