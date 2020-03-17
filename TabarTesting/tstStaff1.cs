@@ -16,6 +16,8 @@ namespace TabarTesting
             Assert.IsNotNull(AnStaff);
         }
         [TestMethod]
+
+
         public void ManagerPropertyOK()
         {
             //Create an instance of the class we want to create
@@ -51,18 +53,7 @@ namespace TabarTesting
             //Test to see that the two values are the same
             Assert.AreEqual(AnStaff.PostCode, TestData);
         }
-        [TestMethod]
-        public void HouseNoProperty()
-        {
-            //Create an instance of the class we want to create
-            clsStaff AnStaff = new clsStaff();
-            //Create some test data to assign to the property
-            string TestData = "21";
-            //Assign the data to the property
-            AnStaff.HouseNo = TestData;
-            //Test to see that the two values are the same
-            Assert.AreEqual(AnStaff.HouseNo, TestData);
-        }
+
         [TestMethod]
         public void StreetPropertyOK()
         {
@@ -75,18 +66,7 @@ namespace TabarTesting
             //Test to see that the two values are the same
             Assert.AreEqual(AnStaff.Street, TestData);
         }
-        [TestMethod]
-        public void TownPropertyOK()
-        {
-            //Create an instance of the class we want to create
-            clsStaff AnStaff = new clsStaff();
-            //Create some test data to assign to the property
-            string TestData = "Leicester";
-            //Assign the data to the property
-            AnStaff.Town = TestData;
-            //Test to see that the two values are the same
-            Assert.AreEqual(AnStaff.Town, TestData);
-        }
+
         [TestMethod]
         public void FirstNamePropertyOK()
         {
@@ -123,6 +103,60 @@ namespace TabarTesting
             //Test to see that the two values are the same
             Assert.AreEqual(AnStaff.TelephoneNo, TestData);
         }
+        [TestMethod]
+        public void StaffNoPropertyOK()
+        {
+            //Create an instance of the class we want to create
+            clsStaff AnStaff = new clsStaff();
+            //Create some test data to assign to the property
+            Int32 TestData = 1;
+            //Assign the data to the property
+            AnStaff.StaffNo = TestData;
+            //Test to see that the two values are the same
+            Assert.AreEqual(AnStaff.StaffNo, TestData);
+        }
+        [TestMethod]
+        public void HouseNoPropertyOK()
+        {
+            //Create an instance of the class we want to create
+            clsStaff AnStaff = new clsStaff();
+            //Create some test data to assign to the property
+            Int32 TestData = 1;
+            //Assign the data to the property
+            AnStaff.HouseNo = TestData;
+            //Test to see that the two values are the same
+            Assert.AreEqual(AnStaff.HouseNo, TestData);
+        }
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //Create an instance of the class we want tot create
+            clsStaffCollection AllStaff = new clsStaffCollection();
+            //Create the item of the test data
+            clsStaff TestItem = new clsStaff();
+            //Var to store the primary key
+            Int32 PrimaryKey = 0;
+            //Set its properties
+            TestItem.Active = true;
+            TestItem.StaffNo = 1;
+            TestItem.FirstName = "Tom";
+            TestItem.Surname = "Campbell";
+            TestItem.Street = "Some Street";
+            TestItem.PostCode = "LE4 Q98";
+            TestItem.TelephoneNo = "0123445";
+            TestItem.DOB = "09/02/2000";
+            //Set ThisStaff to the test data
+            AllStaff.ThisStaff = TestItem;
+            //Add the record
+            PrimaryKey = AllStaff.Add();
+            //Set the primary key of the test data
+            TestItem.StaffNo = PrimaryKey;
+            //Find the record
+            AllStaff.ThisStaff.Find(PrimaryKey);
+            //Test to see that the two values are the same
+        }
+
     }
 }
+
 

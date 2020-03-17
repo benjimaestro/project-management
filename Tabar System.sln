@@ -8,6 +8,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TabarFrontOffice", "TabarFrontOffice\", "{143D50D2-EDBA-499F-A108-5A13C2EE76C9}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{5a260ec4-9f8a-494f-8163-05dfd36ea21d}|TabarClasses.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_3038"
 		Debug.AspNetCompiler.PhysicalPath = "TabarFrontOffice\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3038\"
@@ -23,6 +24,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TabarFrontOffice", "TabarFr
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "3038"
+		SlnRelativePath = "TabarFrontOffice\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
