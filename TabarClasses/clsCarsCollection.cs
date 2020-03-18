@@ -7,10 +7,15 @@ namespace TabarClasses
 {
     public class clsCarsCollection
     {
+       
         public clsCarsCollection()
         {
 
         }
+
+        public List<clsCar> CarList { get; set; }
+        public int Count { get; set; }
+        public clsCar ThisCar { get; set; }
 
         public Boolean Delete(Int32 CarNo) 
         {
