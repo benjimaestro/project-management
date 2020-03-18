@@ -16,4 +16,9 @@ public partial class CarDelete : System.Web.UI.Page
     {
 
     }
+
+    protected void btnNo_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Default.aspx");
+    }
 }
