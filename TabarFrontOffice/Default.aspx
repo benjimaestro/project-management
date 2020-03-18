@@ -28,7 +28,7 @@
         <asp:TextBox ID="txtCarPrice" runat="server" style="z-index: 1; left: 22px; top: 621px; position: absolute"></asp:TextBox>
         <asp:Button ID="btnFilterCarPrice" runat="server" style="z-index: 1; left: 162px; top: 618px; position: absolute; right: 325px" Text="APPLY" />
         <asp:Label ID="lblForCustomerLogin" runat="server" style="z-index: 1; left: 203px; top: 159px; position: absolute" Text="Click on customer login to login or resgister "></asp:Label>
-        <asp:Button ID="btnCustomer" runat="server" style="z-index: 1; left: 190px; top: 194px; position: absolute" Text="CUSTOMER LOGIN / REGISTER" />
+        <asp:Button ID="btnCustomer" runat="server" OnClick="btnCustomer_Click" style="z-index: 1; left: 190px; top: 194px; position: absolute" Text="CUSTOMER LOGIN / REGISTER" />
         <asp:Label ID="lblForStaffLogin" runat="server" style="z-index: 1; left: 225px; top: 237px; position: absolute" Text="Click on staff login to login or register "></asp:Label>
         <asp:Button ID="btnStaff" runat="server" style="z-index: 1; left: 209px; top: 270px; position: absolute" Text="STAFF / MANAGER LOGIN" />
         <asp:Label ID="lblAccessory" runat="server" style="z-index: 1; left: 272px; top: 37px; position: absolute" Text="Click on Accessory to browse accessory"></asp:Label>
