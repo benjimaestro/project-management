@@ -13,23 +13,22 @@ public partial class CarAdd : System.Web.UI.Page
 
     }
 
-    protected void btnCancel_Click1(object sender, EventArgs e)
+ 
+    protected void btnSubmit_Click(object sender, EventArgs e)
     {
+        clsCars ACar = new clsCars();
+        ACar.CarMake = txtCarMake.Text;
+        Session["ACar"] = ACar;
         Response.Redirect("Default.aspx");
     }
 
-    protected void btnSubmit_Click1(object sender, EventArgs e)
+    protected void txtCarRDate_TextChanged(object sender, EventArgs e)
     {
-        clsCar ACar = new clsCar();
-        ACar.CarMake = txtCarMake.Text;
-        ACar.CarModel = txtCarModel.Text;
-        ACar.CarModelNumber = txtCarModelNumber.Text;
-        //ACar.CarPrice = txtCarPrice.Text;
-        ACar.CarColour = txtCarColour.Text;
-        ACar.CarReleaseDate = txtCarRDate.Text;
-        //ACar.CarTypeNumber = drpCarType.Text; 
 
-        Session["ACar"] = ACar;
-        Response.Redirect("Default.aspx");
+    }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+
     }
 }

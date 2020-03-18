@@ -12,13 +12,13 @@ public partial class CarEdit : System.Web.UI.Page
 
     }
 
-    protected void btnSubmit_Click1(object sender, EventArgs e)
+    protected void btnCancel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Default.aspx");
+
     }
 
-    protected void btnCancel_Click1(object sender, EventArgs e)
+    protected void btnSubmit_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Default.aspx");
+
     }
 }

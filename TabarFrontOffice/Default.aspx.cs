@@ -12,33 +12,28 @@ public partial class _Default : System.Web.UI.Page
 
     }
 
-    protected void Button1_Click(object sender, EventArgs e)
+    protected void btnApplyCarColour_Click(object sender, EventArgs e)
     {
 
-    }
-
-    protected void btnApplyCarRDate_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void btnFilterCMNumber_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void btnEdit_Click1(object sender, EventArgs e)
-    {
-        Response.Redirect("CarEdit.aspx");
-    }
-
-    protected void btnDelete_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("CarDelete.aspx");
     }
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
-        Response.Redirect("CarAdd.aspx");
+
+    }
+
+    protected void btnEdit_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btnDelete_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btnCustomer_Click(object sender, EventArgs e)
+    {
+
     }
 }

@@ -10,108 +10,72 @@ namespace TabarTesting
         [TestMethod]
         public void InstanceOK()
         {
-            clsCar ACar = new clsCar();
-            //create an instance of the class we want to create 
+            clsCars ACar = new clsCars();
             Assert.IsNotNull(ACar);
-            //test to see that it exists 
         }
-
-
-        public void ValidMethodOK()
-        {
-            clsCar ACar = new clsCar();
-            //create an instance of the class we want to create 
-            String Error = "";
-            //create a string variable to store the result of the validation
-            string SomeCarType = "Hatchback";
-            //Create some test data to test the method 
-            Error = ACar.Valid(SomeCarType);
-            //invoke the method 
-            Assert.AreEqual(Error, "");
-        }
-
         [TestMethod]
-        public void CarTypeLessOne()
+        public void CarNoOK()
         {
-            clsCar ACar = new clsCar();
-            //create an instance of the class we want to create 
-            String Error = "";
-            //create a string variable to store the result of the validation
-            string SomeCarType = "";
-            //Create some test data to test the method 
-            Error = ACar.Valid(SomeCarType);
-            //invoke the method 
-            Assert.AreEqual(Error, "");
-            //test to see that the result is NOT OK i.e there should be an error message 
-        }
-
-        [TestMethod]
-        public void CarNoPropertyOK()
-        {
-            clsCar ACar = new clsCar();
+            clsCars ACar = new clsCars();
             Int32 TestData = 1;
             ACar.CarNo = TestData;
             Assert.AreEqual(ACar.CarNo, TestData);
         }
         [TestMethod]
-        public void CarMakePropertyOK()
+        public void CarMakeOK()
         {
-            clsCar ACar = new clsCar();
+            clsCars ACar = new clsCars();
             string TestData = "Nissan";
             ACar.CarMake = TestData;
             Assert.AreEqual(ACar.CarMake, TestData);
         }
         [TestMethod]
-        public void CarModelPropertyOK()
+        public void CarModelOK()
         {
-            clsCar ACar = new clsCar();
-            string TestData = "VRJJi8";
+            clsCars ACar = new clsCars();
+            string TestData = "Aki";
             ACar.CarModel = TestData;
             Assert.AreEqual(ACar.CarModel, TestData);
         }
         [TestMethod]
-        public void CarModelNumberPropertyOK()
+        public void CarModelNumberOK()
         {
-            clsCar ACar = new clsCar();
-            string TestData = "112Ki";
+            clsCars ACar = new clsCars();
+            string TestData = "VRi82";
             ACar.CarModelNumber = TestData;
             Assert.AreEqual(ACar.CarModelNumber, TestData);
         }
         [TestMethod]
-        public void CarPricePropertyOK()
+        public void CarPriceOK()
         {
-            clsCar ACar = new clsCar();
-            int TestData = 1;
+            clsCars ACar = new clsCars();
+            Int32 TestData = 10000;
             ACar.CarPrice = TestData;
             Assert.AreEqual(ACar.CarPrice, TestData);
         }
         [TestMethod]
-        public void CarColourPropertyOK()
+        public void CarReleaseDateOK()
         {
-            clsCar ACar = new clsCar();
-            string TestData = "Green";
-            ACar.CarColour = TestData;
-            Assert.AreEqual(ACar.CarColour, TestData);
-        }
-        [TestMethod]
-        public void CarReleaseDatePropertyOK()
-        {
-            clsCar ACar = new clsCar();
-            string TestData = "10/10/1998";
+            clsCars ACar = new clsCars();
+            string TestData = "10/10/2019";
             ACar.CarReleaseDate = TestData;
             Assert.AreEqual(ACar.CarReleaseDate, TestData);
         }
         [TestMethod]
-        public void CarTypeNumberPropertyOK()
+        public void CarColourOK()
         {
-            clsCar ACar = new clsCar();
-            int TestData = 1;
+            clsCars ACar = new clsCars();
+            string TestData = "Blue";
+            ACar.CarColour = TestData;
+            Assert.AreEqual(ACar.CarColour, TestData);
+        }
+        [TestMethod]
+        public void CarTypeNumberOK()
+        {
+            clsCars ACar = new clsCars();
+            Int32 TestData = 1;
             ACar.CarTypeNumber = TestData;
             Assert.AreEqual(ACar.CarTypeNumber, TestData);
         }
-
-
     }
-
-
 }

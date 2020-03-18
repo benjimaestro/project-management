@@ -1,46 +1,42 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html>
+<script runat="server">
+</script>
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style type="text/css">
-        #form1 {
-            height: 508px;
-        }
-    </style>
 </head>
-<body style="height: 3px">
+<body>
     <form id="form1" runat="server">
-        <asp:ListBox ID="lstCars" runat="server" style="z-index: 1; left: 320px; top: 86px; position: absolute; height: 265px; width: 269px"></asp:ListBox>
-        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 426px; top: 358px; position: absolute; height: 24px; width: 66px"></asp:Label>
-        <asp:Button ID="btnAdd" runat="server" style="z-index: 1; left: 608px; top: 136px; position: absolute; width: 54px" Text="Add" OnClick="btnAdd_Click" />
-        <asp:Button ID="btnEdit" runat="server" style="z-index: 1; left: 609px; top: 189px; position: absolute; width: 54px" Text="Edit" OnClick="btnEdit_Click1" />
-        <asp:Button ID="btnDelete" runat="server" style="z-index: 1; left: 607px; top: 92px; position: absolute; margin-top: 0px; height: 26px;" Text="Delete" OnClick="btnDelete_Click" />
-        <asp:Label ID="lblFliterbyCarRDate" runat="server" style="z-index: 1; left: 266px; top: 525px; position: absolute; margin-top: 0px;" Text="Please enter car release date you want to search"></asp:Label>
-        <asp:TextBox ID="txtFilterColour" runat="server" style="z-index: 1; left: 11px; top: 403px; position: absolute; width: 162px; right: 369px"></asp:TextBox>
-        <asp:Button ID="btnApplyCarModel" runat="server" style="z-index: 1; left: 457px; top: 403px; position: absolute" Text="Apply" />
-        <asp:Label ID="lblFliterbyCarTypeNumber" runat="server" style="z-index: 1; left: 127px; top: 606px; position: absolute" Text="Please enter car type number you want to search"></asp:Label>
-        <asp:Label ID="lblFliterbyCarModel" runat="server" style="z-index: 1; left: 274px; top: 375px; position: absolute" Text="Please enter car model you want to search"></asp:Label>
-        <asp:TextBox ID="txtFilterCarModel" runat="server" style="z-index: 1; left: 274px; top: 403px; position: absolute; width: 162px; right: 1066px"></asp:TextBox>
-        <asp:Button ID="btnApplyCarTypeNumber" runat="server" style="z-index: 1; left: 313px; top: 637px; position: absolute" Text="Apply" />
-        <asp:TextBox ID="txtFilterCarMake" runat="server" style="z-index: 1; left: 14px; top: 479px; position: absolute; width: 162px; right: 366px"></asp:TextBox>
-        <asp:Label ID="lblFliterbyCMNumber" runat="server" style="z-index: 1; left: 274px; top: 452px; position: absolute" Text="Please enter car model number you want to search"></asp:Label>
-        <asp:TextBox ID="txtFilterCarRDate" runat="server" style="z-index: 1; left: 274px; top: 560px; position: absolute; width: 162px; "></asp:TextBox>
-        <asp:Button ID="btnApplyCarRDate" runat="server" style="z-index: 1; left: 460px; top: 557px; position: absolute" Text="Apply" OnClick="btnApplyCarRDate_Click" />
-        <asp:Label ID="lblCarMake" runat="server" style="z-index: 1; left: 16px; top: 452px; position: absolute" Text="Please enter car make to search"></asp:Label>
-        <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 12px; top: 374px; position: absolute" Text="Please enter car colour to search "></asp:Label>
-        <asp:Button ID="btnApplyCarColour" runat="server" style="z-index: 1; left: 196px; top: 403px; position: absolute; right: 1107px;" Text="Apply" />
-        <asp:TextBox ID="txtFilterCMNumber" runat="server" style="z-index: 1; left: 273px; top: 478px; position: absolute"></asp:TextBox>
-        <asp:Button ID="btnCarMake" runat="server" style="z-index: 1; left: 191px; top: 476px; position: absolute" Text="Apply" />
-        <asp:Label ID="lblFilterCarPrice" runat="server" style="z-index: 1; left: 12px; top: 527px; position: absolute" Text="Please enter car price you to search "></asp:Label>
-        <asp:TextBox ID="btnFIilterCarPrice" runat="server" style="z-index: 1; left: 14px; top: 562px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtFilterCarTypeNumber" runat="server" style="z-index: 1; left: 148px; top: 638px; position: absolute"></asp:TextBox>
-        <asp:Button ID="btnFilterCMNumber" runat="server" style="z-index: 1; left: 419px; top: 476px; position: absolute" Text="Apply" OnClick="btnFilterCMNumber_Click" />
-        <p>
-            &nbsp;</p>
-        <asp:Button ID="btnFilterCarPrice" runat="server" OnClick="Button1_Click" style="z-index: 1; left: 159px; top: 560px; position: absolute" Text="Apply" />
+        <div>
+        </div>
+        <asp:ListBox ID="lstCarList" runat="server" style="z-index: 1; left: 10px; top: 34px; position: absolute; height: 283px; width: 164px"></asp:ListBox>
+        <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" style="z-index: 1; left: 185px; top: 35px; position: absolute; width: 71px" Text="ADD" />
+        <asp:Button ID="btnEdit" runat="server" OnClick="btnEdit_Click" style="z-index: 1; left: 186px; top: 76px; position: absolute; width: 70px" Text="EDIT" />
+        <asp:Button ID="btnDelete" runat="server" OnClick="btnDelete_Click" style="z-index: 1; left: 185px; top: 116px; position: absolute" Text="DELETE" />
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 14px; top: 332px; position: absolute"></asp:Label>
+        <asp:Label ID="lblFilterbyCarColour" runat="server" style="z-index: 1; left: 17px; top: 368px; position: absolute" Text="Enter the colour of the car to be listed"></asp:Label>
+        <asp:TextBox ID="txtFilterCarColour" runat="server" style="z-index: 1; left: 18px; top: 401px; position: absolute"></asp:TextBox>
+        <asp:Button ID="btnApplyCarColour" runat="server" style="z-index: 1; left: 156px; top: 398px; position: absolute" Text="APPLY" OnClick="btnApplyCarColour_Click" />
+        <asp:Label ID="lblFilterCarMake" runat="server" style="z-index: 1; left: 20px; top: 441px; position: absolute" Text="Enter the make of the car to be listed "></asp:Label>
+        <asp:TextBox ID="txtFilterCarMake" runat="server" style="z-index: 1; left: 20px; top: 473px; position: absolute"></asp:TextBox>
+        <asp:Button ID="btnApplyCarMake" runat="server" style="z-index: 1; left: 158px; top: 471px; position: absolute" Text="APPLY" />
+        <asp:Label ID="lblFilterCarModel" runat="server" style="z-index: 1; left: 21px; top: 514px; position: absolute" Text="Enter the model of the car to be listed"></asp:Label>
+        <asp:TextBox ID="txtFilterCarModel" runat="server" style="z-index: 1; left: 21px; top: 547px; position: absolute"></asp:TextBox>
+        <asp:Button ID="btnApplyCarModel" runat="server" style="z-index: 1; left: 160px; top: 545px; position: absolute" Text="APPLY" />
+        <asp:Label ID="lblFilterCarPrice" runat="server" style="z-index: 1; left: 22px; top: 587px; position: absolute" Text="Enter the price of the car to be listed "></asp:Label>
+        <asp:TextBox ID="txtCarPrice" runat="server" style="z-index: 1; left: 22px; top: 621px; position: absolute"></asp:TextBox>
+        <asp:Button ID="btnFilterCarPrice" runat="server" style="z-index: 1; left: 162px; top: 618px; position: absolute; right: 325px" Text="APPLY" />
+        <asp:Label ID="lblForCustomerLogin" runat="server" style="z-index: 1; left: 203px; top: 159px; position: absolute" Text="Click on customer login to login or resgister "></asp:Label>
+        <asp:Button ID="btnCustomer" runat="server" OnClick="btnCustomer_Click" style="z-index: 1; left: 190px; top: 194px; position: absolute" Text="CUSTOMER LOGIN / REGISTER" />
+        <asp:Label ID="lblForStaffLogin" runat="server" style="z-index: 1; left: 225px; top: 237px; position: absolute" Text="Click on staff login to login or register "></asp:Label>
+        <asp:Button ID="btnStaff" runat="server" style="z-index: 1; left: 209px; top: 270px; position: absolute" Text="STAFF / MANAGER LOGIN" />
+        <asp:Label ID="lblAccessory" runat="server" style="z-index: 1; left: 272px; top: 37px; position: absolute" Text="Click on Accessory to browse accessory"></asp:Label>
+        <asp:Button ID="btnAccessory" runat="server" style="z-index: 1; left: 333px; top: 70px; position: absolute" Text="ACCESSORY" />
+        <asp:Button ID="btnOrder" runat="server" style="z-index: 1; left: 328px; top: 107px; position: absolute" Text="PLACE ORDER" />
     </form>
 </body>
 </html>
