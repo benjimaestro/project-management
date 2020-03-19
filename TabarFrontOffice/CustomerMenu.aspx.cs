@@ -29,8 +29,8 @@ public partial class CustomerMenu : System.Web.UI.Page
 
     protected void btnDelete_Click(object sender, EventArgs e)
     {
-        //Redirects the user to Delete.aspx to delete their account
-        Response.Redirect("Delete.aspx");
+        //Redirects the user to CustomerDelete.aspx to delete their account
+        Response.Redirect("CustomerDelete.aspx");
     }
 
     protected void btnLogout_Click(object sender, EventArgs e)

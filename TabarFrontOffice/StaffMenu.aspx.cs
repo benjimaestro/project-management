@@ -36,14 +36,14 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnDelete_Click(object sender, EventArgs e)
     {
-        //Runs when Delete is pressed, makes sure a selection is made and redirects to Delete.aspx with the customer number as a session object
+        //Runs when Delete is pressed, makes sure a selection is made and redirects to CustomerDelete.aspx with the customer number as a session object
         Int32 CustomerNo;
         if (lstCustomers.SelectedIndex != -1)
         {
             CustomerNo = Convert.ToInt32(lstCustomers.SelectedValue);
             Session["CustomerNo"] = CustomerNo;
             Session["Mode"] = "StaffView";
-            Response.Redirect("Delete.aspx");
+            Response.Redirect("CustomerDelete.aspx");
         }
         else { lblError.Text = "Select a customer to delete"; }
     }
