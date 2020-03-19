@@ -42,6 +42,7 @@ public partial class _Default : System.Web.UI.Page
         {
             CustomerNo = Convert.ToInt32(lstCustomers.SelectedValue);
             Session["CustomerNo"] = CustomerNo;
+            Session["Mode"] = "StaffView";
             Response.Redirect("Delete.aspx");
         }
         else { lblError.Text = "Select a customer to delete"; }

@@ -16,6 +16,7 @@ public partial class Delete : System.Web.UI.Page
         //If no CustomerNo provided, it will redirect to prevent crashes/incorrect deletion
         //Redirects when yes/no are pressed depend on where the user originated from (CustomerMenu.aspx, Default.aspx)
         CustomerNo = Convert.ToInt32(Session["CustomerNo"]);
+        RedirectURL = Convert.ToString(Session["Mode"]);
         if (Session["CustomerNo"] == null) { Response.Redirect("Login.aspx"); }
         clsCustomerCollection Customers = new clsCustomerCollection();
         Customers.Find(CustomerNo);
