@@ -9,12 +9,18 @@ namespace TabarClasses
     {
         public clsCarTypeCollection()
         {
-            clsCarType ACarType = new clsCarType();
-            ACarType.CarType = "Hatchback";
-            mAllCarTypes.Add(ACarType);
-            ACarType = new clsCarType();
-            ACarType.CarType = "Coupe";
-            mAllCarTypes.Add(ACarType); 
+            clsDataConnection DB = new clsDataConnection();
+            DB.Execute("sproc_tblCarType_SelectAll");
+            Int32 RecordCount = DB.Count;
+            Int32 Index = 0; 
+            while (Index < RecordCount)
+            {
+                clsCarType ACarType = new clsCarType();
+                ACarType.CarType = DB.DataTable.Rows[Index]["CarType"].ToString();
+                ACarType.CarTypeNo = Convert.ToInt32(DB.DataTable.Rows[Index]["CarTypeNo"]);
+                mAllCarTypes.Add(ACarType);
+                Index++; 
+            }
         }
         private List<clsCarType> mAllCarTypes = new List<clsCarType>(); 
         public int Count 

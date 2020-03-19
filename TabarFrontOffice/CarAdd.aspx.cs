@@ -44,27 +44,9 @@ public partial class CarAdd : System.Web.UI.Page
     {
         clsCarTypeCollection CarTypes = new clsCarTypeCollection();
         drpCarType.DataSource = CarTypes.AllCarTypes;
-        drpCarType.DataValueField = "CarTypeNumber";
+        drpCarType.DataValueField = "CarTypeNo";
         drpCarType.DataTextField = "CarType";
         drpCarType.DataBind(); 
     }
-   void Add()
-    {
-      clsCarsCollection CarShop = new clsCarsCollection();
-      String Error = CarShop.ThisCar.Valid(txtCarMake, txtCarModel.Text, txtCarModelNumber.Text, txtCarColour.Text, txtCarPrice.Text, txtCarRDate.Text );
-      if (Error == "")
-      {
-           CarShop.ThisCar.CarMake = txtCarMake.Text;
-           CarShop.ThisCar.CarModel = txtCarModel.Text;
-           CarShop.ThisCar.CarModelNumber = txtCarModelNumber.Text;
-           CarShop.ThisCar.CarColour = txtCarColour.Text;
-           CarShop.ThisCar.CarPrice = Convert.ToInt32(txtCarPrice.Text);
-           CarShop.ThisCar.CarTypeNumber = Convert.ToInt32(drpCarType.SelectedValue);
-           CarShop.ThisCar.CarReleaseDate = txtCarRDate.Text; 
-      }
-      else
-      {
-            lblError.Text = "There was problems with the data entered " + Error;
-      }
-  }
+  
 }

@@ -9,7 +9,7 @@ namespace TabarClasses
         }
 
         public string CarType { get; set; }
-        public int CarTypeNumber { get; set; }
+        public int CarTypeNo { get; set; }
 
         public string Valid(string someCarType)
         {

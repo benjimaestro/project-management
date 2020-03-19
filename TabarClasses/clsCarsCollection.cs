@@ -82,7 +82,7 @@ namespace TabarClasses
             DB.AddParameter("@CarModelNumber", mThisCar.CarModelNumber);
             DB.AddParameter("@CarColour", mThisCar.CarColour);
             DB.AddParameter("@CarPrice", mThisCar.CarPrice);
-            DB.AddParameter("@CarTypeNumber", mThisCar.CarTypeNumber);
+            DB.AddParameter("@CarTypeNo", mThisCar.CarTypeNumber);
             DB.AddParameter("@CarReleaseDate", mThisCar.CarReleaseDate);
             return DB.Execute("sproc_tblCars_Insert");
         }

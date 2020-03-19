@@ -26,8 +26,8 @@ namespace TabarTesting
         {
             clsCarType ACarType = new clsCarType();
             int SomeCarType = 1;
-            ACarType.CarTypeNumber = SomeCarType;
-            Assert.AreEqual(ACarType.CarTypeNumber, SomeCarType);
+            ACarType.CarTypeNo = SomeCarType;
+            Assert.AreEqual(ACarType.CarTypeNo, SomeCarType);
         }
         [TestMethod]
         public void ValidMethodOK()

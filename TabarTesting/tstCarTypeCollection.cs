@@ -18,7 +18,7 @@ namespace TabarTesting
         public void CountPropertyOK()
         {
             clsCarTypeCollection AllCarTypes = new clsCarTypeCollection();
-            Int32 SomeCount = 2;
+            Int32 SomeCount = 6;
             AllCarTypes.Count = SomeCount;
             Assert.AreEqual(AllCarTypes.Count, SomeCount);
         }
@@ -28,7 +28,7 @@ namespace TabarTesting
             clsCarTypeCollection CarTypes = new clsCarTypeCollection();
             List<clsCarType> TestList = new List<clsCarType>();
             clsCarType TestItem = new clsCarType();
-            TestItem.CarTypeNumber = 1;
+            TestItem.CarTypeNo = 1;
             TestItem.CarType = "Hatchback";
             TestList.Add(TestItem);
             CarTypes.AllCarTypes = TestList;
@@ -40,7 +40,7 @@ namespace TabarTesting
             clsCarTypeCollection CarTypes = new clsCarTypeCollection();
             List<clsCarType> TestList = new List<clsCarType>();
             clsCarType TestItem = new clsCarType();
-            TestItem.CarTypeNumber = 1;
+            TestItem.CarTypeNo = 1;
             TestItem.CarType = "Hatchback";
             TestList.Add(TestItem);
             CarTypes.AllCarTypes = TestList;

@@ -10,30 +10,64 @@ namespace TabarClasses
 {
     public class clsCars
     {
-        public clsCars()
+        private Int32 mCarNo;
+        private string mCarMake;
+        private string mCarModel;
+        private string mCarModelNumber;
+        private Int32 mCarPrice;
+        private string mCarReleaseDate;
+        private string mCarColour;
+        private Int32 mCarTypeNumber;
+       
+
+        public int CarNo { get { return mCarNo; } set { mCarNo = value; } }
+        public string CarMake { get { return mCarMake; } set { mCarMake = value; } }
+        public string CarModel { get { return mCarModel; } set { mCarModel = value; } }
+        public string CarModelNumber { get { return mCarModelNumber; } set { mCarModelNumber = value; } }
+        public int CarPrice { get { return mCarPrice; } set { mCarPrice = value; } }
+        public string CarReleaseDate { get { return mCarReleaseDate; } set { mCarReleaseDate = value; } }
+        public string CarColour { get { return mCarColour; } set { mCarColour = value; } }
+        public int CarTypeNumber { get { return mCarTypeNumber; } set { mCarTypeNumber = value; } }
+
+        public bool Find(int CarNo)
         {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@CarNo", CarNo);
+            DB.Execute("sproc_tblCars_FilterByCarNo");
+            if (DB.Count == 1)
+            {
+                mCarNo = Convert.ToInt32(DB.DataTable.Rows[0]["CarNo"]);
+                mCarMake = Convert.ToString(DB.DataTable.Rows[0]["CarMake"]);
+                mCarModel = Convert.ToString(DB.DataTable.Rows[0]["CarModel"]);
+                mCarModelNumber = Convert.ToString(DB.DataTable.Rows[0]["CarModelNumber"]);
+                mCarPrice = Convert.ToInt32(DB.DataTable.Rows[0]["CarPrice"]);
+                mCarReleaseDate = Convert.ToString(DB.DataTable.Rows[0]["CarReleaseDate"]);
+                mCarColour = Convert.ToString(DB.DataTable.Rows[0]["CarColour"]);
+                mCarTypeNumber = Convert.ToInt32(DB.DataTable.Rows[0]["CarTypeNumber"]);
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
         }
 
-        public int CarNo { get; set; }
-        public string CarMake { get; set; }
-        public string CarModel { get; set; }
-        public string CarModelNumber { get; set; }
-        public int CarPrice { get; set; }
-        public string CarReleaseDate { get; set; }
-        public string CarColour { get; set; }
-        public int CarTypeNumber { get; set; }
-
-        public void Find(int primaryKey)
+        public string Valid(string CarMake, string CarModel, string CarModelNumber, string CarColour, string CarReleaseDate)
         {
-            clsCars SomeCar = new clsCars();
-            SomeCar.Find(3); 
+            String Error = "";
+            if (CarMake.Length == 0)
+            {
+                Error = Error + "The car make can not be blank : ";
+            }
+            if (CarMake.Length > 3)
+            {
+                Error = Error + "The car make can not be less than 3 characters ";
+            }
+            if (CarMake.Length > 40)
+            {
+                Error = Error + "The car make can not be longer than 40 chracters ";
+            }
+            return Error;
         }
-
-        public string Valid(System.Web.UI.WebControls.TextBox txtCarMake, string text1, string text2, string text3, string text4, string text5)
-        {
-            throw new NotImplementedException();
-        }
-
-        
     }
 }
