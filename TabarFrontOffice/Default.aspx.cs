@@ -28,7 +28,14 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnApplyCarColour_Click(object sender, EventArgs e)
     {
-       
+        string Filter = txtFilterCarMake.Text;
+        clsCarsCollection Cars = new clsCarsCollection();
+        Cars.ReportByCarColour(Filter);
+        lstCarList.Items.Clear();
+        lstCarList.DataSource = Cars.CarList;
+        lstCarList.DataValueField = "CarNo";
+        lstCarList.DataTextField = "CarMake";
+        lstCarList.DataBind();
     }
 
     protected void btnAdd_Click(object sender, EventArgs e)
@@ -81,12 +88,26 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnApplyCarMake_Click(object sender, EventArgs e)
     {
-        
+        string Filter = txtFilterCarMake.Text;
+        clsCarsCollection Cars = new clsCarsCollection();
+        Cars.ReportByCarMake(Filter);
+        lstCarList.Items.Clear();
+        lstCarList.DataSource = Cars.CarList;
+        lstCarList.DataValueField = "CarNo";
+        lstCarList.DataTextField = "CarMake";
+        lstCarList.DataBind();
     }
 
     protected void btnApplyCarModel_Click(object sender, EventArgs e)
     {
-      
+        string Filter = txtFilterCarMake.Text;
+        clsCarsCollection Cars = new clsCarsCollection();
+        Cars.ReportByCarModel(Filter);
+        lstCarList.Items.Clear();
+        lstCarList.DataSource = Cars.CarList;
+        lstCarList.DataValueField = "CarNo";
+        lstCarList.DataTextField = "CarMake";
+        lstCarList.DataBind();
     }
 
     protected void btnFilterCarPrice_Click(object sender, EventArgs e)

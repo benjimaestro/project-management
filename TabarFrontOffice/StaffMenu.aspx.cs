@@ -81,4 +81,9 @@ public partial class _Default : System.Web.UI.Page
         //Runs when Show All is pressed, populates listbox with all customers
         DisplayCustomers();
     }
+
+    protected void txtFilter_TextChanged(object sender, EventArgs e)
+    {
+
+    }
 }
