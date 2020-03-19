@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabarBackOffice", "TabarBackOffice\TabarBackOffice.csproj", "{AD0DF7EB-BAED-4C98-8461-5A30F436F9B7}"
 EndProject
@@ -31,6 +31,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabarClasses", "TabarClasses\TabarClasses.csproj", "{5A260EC4-9F8A-494F-8163-05DFD36EA21D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabarTesting", "TabarTesting\TabarTesting.csproj", "{C80706EF-4025-413A-BDE1-87BF39F79385}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{5D78412A-ED2A-45AA-94B3-97F82B66BBE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
