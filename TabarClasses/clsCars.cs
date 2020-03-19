@@ -52,7 +52,7 @@ namespace TabarClasses
             }
         }
 
-        public string Valid(string CarMake, string CarModel, string CarModelNumber, string CarColour, string CarReleaseDate)
+        public string Valid(string CarMake, string CarModel, string CarModelNumber, string CarColour, string CarReleaseDate, int CarPrice)
         {
             String Error = "";
             if (CarMake.Length == 0)
@@ -101,22 +101,36 @@ namespace TabarClasses
             }
             if (CarColour.Length > 25)
             {
-                Error = Error + "The car model can not be more than 25 characters";
+                Error = Error + "The car colour can not be more than 25 characters";
             }
             if (CarReleaseDate.Length == 0)
             {
                 Error = Error + "The car release date can not be blank :";
             }
-            if (CarColour.Length < 10)
+            if (CarReleaseDate.Length < 10)
             {
                 Error = Error + "The car release date can not be less than 10 character, use DD/MM/YYYY";
             }
-            if (CarColour.Length > 10)
+            if (CarReleaseDate.Length > 10)
             {
                 Error = Error + "The car release date can not be more than 10 characters, use DD/MM/YYYY";
+            }
+            if (CarPrice == 0)
+            {
+                Error = Error + "The car price can not be blank :";
+            }
+            if (CarPrice  < 0)
+            {
+                Error = Error + "The car price can not cost less than £0 ";
+            }
+            if (CarPrice > 4800000)
+            {
+                Error = Error + "The car price can not cost more than £4800000 ";
             }
 
             return Error;
         }
+        
+        
     }
 }

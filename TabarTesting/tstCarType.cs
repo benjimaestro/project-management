@@ -46,7 +46,7 @@ namespace TabarTesting
             String Error = "";
             string SomeCarType = "aa";
             Error = ACarType.Valid(SomeCarType);
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -96,7 +96,7 @@ namespace TabarTesting
             String Error = "";
             string SomeCarType = "aaaaaaaaa";
             Error = ACarType.Valid(SomeCarType);
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -117,14 +117,9 @@ namespace TabarTesting
             string SomeCarType = "";
             SomeCarType = SomeCarType.PadRight(500, 'a');
             Error = ACarType.Valid(SomeCarType);
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
 
         }
-        [TestMethod]
-        public void TwoCarTypePresent()
-        {
-            clsCarTypeCollection CarTypes = new clsCarTypeCollection();
-            Assert.AreEqual(CarTypes.Count, 2); 
-        }
+        
     }
 }

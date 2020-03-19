@@ -12,6 +12,7 @@ namespace TabarTesting
         string CarModelNumber = "1123";
         string CarReleaseDate = "10/10/2019";
         string CarColour = "Blue";
+        int CarPrice = 10000;
 
         [TestMethod]
         public void InstanceOK()
@@ -218,8 +219,8 @@ namespace TabarTesting
         {
             clsCars ACar = new clsCars();
             String Error = "";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -228,7 +229,7 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarMake = "";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -238,8 +239,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarMake = "aaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -248,8 +249,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarMake = "aaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -258,8 +259,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarMake = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -268,8 +269,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarMake = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -278,8 +279,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarMake = "aaaaaaaaaaaaaaaaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -288,7 +289,7 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarMake = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -299,7 +300,7 @@ namespace TabarTesting
             String Error = "";
             string CarMake = "";
             CarMake = CarMake.PadRight(100000, 'a');
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -309,7 +310,7 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarModel = "";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -319,8 +320,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarModel = "a";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -329,8 +330,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarModel = "aa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -339,8 +340,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarModel = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -349,8 +350,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarModel = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -359,8 +360,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarModel = "aaaaaaaaaaaaaaaaaaaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -369,8 +370,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarModel = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -380,7 +381,7 @@ namespace TabarTesting
             String Error = "";
             string CarModel = "";
             CarMake = CarMake.PadRight(100000, 'a');
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -390,7 +391,7 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarModelNumber = "";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -400,8 +401,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarModelNumber = "a";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -410,8 +411,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarModelNumber = "aa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -420,8 +421,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarModelNumber = "aaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -430,8 +431,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarModelNumber = "aaaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -440,8 +441,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarModelNumber = "aaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -450,7 +451,7 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarModelNumber = "aaaaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -461,7 +462,7 @@ namespace TabarTesting
             String Error = "";
             string CarModelNumber = "";
             CarMake = CarMake.PadRight(100000, 'a');
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -471,7 +472,7 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarColour = "";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -481,8 +482,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarColour = "aaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -491,8 +492,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarColour = "aaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -501,8 +502,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarColour = "aaaaaaaaaaaaaaaaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -511,8 +512,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarColour = "aaaaaaaaaaaaaaaaaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -521,8 +522,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarColour = "aaaaaaaaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -531,8 +532,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarColour = "aaaaaaaaaaaaaaaaaaaaaa";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -542,7 +543,7 @@ namespace TabarTesting
             String Error = "";
             string CarColour = "";
             CarMake = CarMake.PadRight(100000, 'a');
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -552,7 +553,7 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarReleaseDate = "";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -562,8 +563,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarReleaseDate = "10/10/1998";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -572,7 +573,7 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarReleaseDate = "10/10/19988";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -582,7 +583,7 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarReleaseDate = "9/09/1998";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -592,8 +593,8 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarReleaseDate = "10/10/1998";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
-            Assert.AreNotEqual(Error, "");
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -601,8 +602,8 @@ namespace TabarTesting
         {
             clsCars ACar = new clsCars();
             String Error = "";
-            string CarMake = "9/9/98";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            string CarReleaseDate = "9/9/98";
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -612,7 +613,7 @@ namespace TabarTesting
             clsCars ACar = new clsCars();
             String Error = "";
             string CarReleaseDate = "10/10/19988";
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -623,10 +624,90 @@ namespace TabarTesting
             String Error = "";
             string CarReleaseDate = "";
             CarReleaseDate = CarReleaseDate.PadRight(100000, 'a');
-            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate);
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
             Assert.AreNotEqual(Error, "");
 
         }
-        
+        [TestMethod]
+        public void CarPiceMinLessOne()
+        {
+            clsCars ACar = new clsCars();
+            String Error = "";
+            int CarPrice = -1;
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreNotEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CarPiceMin()
+        {
+            clsCars ACar = new clsCars();
+            String Error = "";
+            int CarPice = 0;
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CarPiceMinPlusOne()
+        {
+            clsCars ACar = new clsCars();
+            String Error = "";
+            int CarPice = 1;
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CarPiceMaxLessOne()
+        {
+            clsCars ACar = new clsCars();
+            String Error = "";
+            int CarPice = 4799999;
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CarPiceMax()
+        {
+            clsCars ACar = new clsCars();
+            String Error = "";
+            int CarPice = 4800000;
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CarPriceMid()
+        {
+            clsCars ACar = new clsCars();
+            String Error = "";
+            int CarPrice = 2400000;
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CarPiceMaxPlusOne()
+        {
+            clsCars ACar = new clsCars();
+            String Error = "";
+            int CarPrice = 4800001;
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreNotEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CarPriceExtremeMax()
+        {
+            clsCars ACar = new clsCars();
+            String Error = "";
+            int CarPrice = 99999999;
+            Error = ACar.Valid(CarMake, CarModel, CarModelNumber, CarColour, CarReleaseDate, CarPrice);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
     }
 }

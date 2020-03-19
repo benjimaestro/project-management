@@ -26,10 +26,10 @@
         <asp:Button ID="btnApplyCarMake" runat="server" style="z-index: 1; left: 158px; top: 471px; position: absolute" Text="APPLY" OnClick="btnApplyCarMake_Click" />
         <asp:Label ID="lblFilterCarModel" runat="server" style="z-index: 1; left: 21px; top: 514px; position: absolute" Text="Enter the model of the car to be listed"></asp:Label>
         <asp:TextBox ID="txtFilterCarModel" runat="server" style="z-index: 1; left: 21px; top: 547px; position: absolute"></asp:TextBox>
-        <asp:Button ID="btnApplyCarModel" runat="server" style="z-index: 1; left: 160px; top: 545px; position: absolute; bottom: 111px;" Text="APPLY" OnClick="btnApplyCarModel_Click" />
+        <asp:Button ID="btnApplyCarModel" runat="server" style="z-index: 1; left: 160px; top: 545px; position: absolute; " Text="APPLY" OnClick="btnApplyCarModel_Click" />
         <asp:Label ID="lblFilterCarPrice" runat="server" style="z-index: 1; left: 22px; top: 587px; position: absolute" Text="Enter the price of the car to be listed "></asp:Label>
         <asp:TextBox ID="txtCarPrice" runat="server" style="z-index: 1; left: 22px; top: 621px; position: absolute"></asp:TextBox>
-        <asp:Button ID="btnFilterCarPrice" runat="server" style="z-index: 1; left: 162px; top: 618px; position: absolute; right: 325px" Text="APPLY" OnClick="btnFilterCarPrice_Click" />
+        <asp:Button ID="btnFilterCarPrice" runat="server" style="z-index: 1; left: 162px; top: 618px; position: absolute; " Text="APPLY" OnClick="btnFilterCarPrice_Click" />
         <asp:Label ID="lblForCustomerLogin" runat="server" style="z-index: 1; left: 203px; top: 159px; position: absolute" Text="Click on customer login to login or resgister "></asp:Label>
         <asp:Button ID="btnCustomer" runat="server" OnClick="btnCustomer_Click" style="z-index: 1; left: 190px; top: 194px; position: absolute" Text="CUSTOMER LOGIN / REGISTER" />
         <asp:Label ID="lblForStaffLogin" runat="server" style="z-index: 1; left: 225px; top: 237px; position: absolute" Text="Click on staff login to login or register "></asp:Label>
