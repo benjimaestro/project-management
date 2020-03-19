@@ -59,6 +59,10 @@
     <Compile Include="clsCustomerCollection.cs" />
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsCustomerValidate.cs" />
+    <Compile Include="clsItemType.cs" />
+    <Compile Include="clsItemTypeCollection.cs" />
+    <Compile Include="clsOrder.cs" />
+    <Compile Include="clsOrderCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@ using TabarClasses;
 namespace TabarTesting
 {
     [TestClass]
-    public class tstValidation
+    public class tstCustomerValidation
     {
         //This class tests functionality for the Validation class by running functions in an isolated way
         //This makes it easier to debug and find issues in the code

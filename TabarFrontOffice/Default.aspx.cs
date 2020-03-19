@@ -76,7 +76,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnCustomer_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("Login.aspx");
     }
 
     protected void btnApplyCarMake_Click(object sender, EventArgs e)
@@ -98,5 +98,10 @@ public partial class _Default : System.Web.UI.Page
     {
         DisplayCars(); 
     }
- 
+
+
+    protected void btnStaff_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("StaffMenu.aspx");
+    }
 }

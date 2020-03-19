@@ -55,9 +55,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tstCarCollection.cs" />
+    <Compile Include="tstCars.cs" />
+    <Compile Include="tstCarType.cs" />
+    <Compile Include="tstCarTypeCollection.cs" />
     <Compile Include="tstCustomer.cs" />
     <Compile Include="tstCustomerCollection.cs" />
-    <Compile Include="tstValidation.cs" />
+    <Compile Include="tstItemType.cs" />
+    <Compile Include="tstItemTypeCollection.cs" />
+    <Compile Include="tstOrder.cs" />
+    <Compile Include="tstOrderCollection.cs" />
+    <Compile Include="tstCustomerValidation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
