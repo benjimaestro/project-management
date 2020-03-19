@@ -36,7 +36,7 @@
         <asp:Button ID="btnStaff" runat="server" style="z-index: 1; left: 209px; top: 270px; position: absolute" Text="MANAGE CUSTOMERS" OnClick="btnStaff_Click" />
         <asp:Label ID="lblAccessory" runat="server" style="z-index: 1; left: 272px; top: 37px; position: absolute" Text="Click on Accessory to browse accessory"></asp:Label>
         <asp:Button ID="btnAccessory" runat="server" style="z-index: 1; left: 333px; top: 70px; position: absolute" Text="ACCESSORY" />
-        <asp:Button ID="btnOrder" runat="server" style="z-index: 1; left: 328px; top: 107px; position: absolute" Text="PLACE ORDER" />
+        <asp:Button ID="btnOrder" runat="server" style="z-index: 1; left: 328px; top: 107px; position: absolute" Text="PLACE ORDER" OnClick="btnOrder_Click" />
         <asp:Button ID="btnDisplayAll" runat="server" OnClick="btnDisplayAll_Click" style="z-index: 1; left: 100px; top: 331px; position: absolute" Text="DISPLAY ALL" />
     </form>
 </body>

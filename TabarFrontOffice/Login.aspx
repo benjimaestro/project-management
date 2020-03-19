@@ -17,6 +17,7 @@
         <asp:Button ID="btnLogin" runat="server" style="z-index: 1; left: 10px; top: 175px; position: absolute; width: 130px;" Text="Log in" OnClick="btnLogin_Click" />
         <asp:Label ID="lblLoginError" runat="server" style="z-index: 1; left: 10px; top: 246px; position: absolute"></asp:Label>
         <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" style="z-index: 1; left: 10px; top: 210px; position: absolute; width: 130px" Text="Register" />
+        <asp:Button ID="btonBack" runat="server" OnClick="btonBack_Click" style="z-index: 1; left: 13px; top: 278px; position: absolute; width: 120px" Text="Back to menu" />
     </form>
 </body>
 </html>

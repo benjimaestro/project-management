@@ -50,4 +50,9 @@ public partial class Login : System.Web.UI.Page
         Session["CustomerNo"] = -1;
         Response.Redirect("Customer.aspx");
     }
+
+    protected void btonBack_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Default.aspx");
+    }
 }

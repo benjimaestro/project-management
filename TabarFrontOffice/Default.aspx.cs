@@ -104,4 +104,9 @@ public partial class _Default : System.Web.UI.Page
     {
         Response.Redirect("StaffMenu.aspx");
     }
+
+    protected void btnOrder_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Order.aspx");
+    }
 }
