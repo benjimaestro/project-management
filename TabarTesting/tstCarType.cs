@@ -25,7 +25,7 @@ namespace TabarTesting
         public void CarTypeNumberPropertyOK()
         {
             clsCarType ACarType = new clsCarType();
-            string SomeCarType = "HatchBack";
+            int SomeCarType = 1;
             ACarType.CarTypeNumber = SomeCarType;
             Assert.AreEqual(ACarType.CarTypeNumber, SomeCarType);
         }
@@ -38,6 +38,93 @@ namespace TabarTesting
             Error = ACarType.Valid(SomeCarType);
             Assert.AreEqual(Error, ""); 
            
+        }
+        [TestMethod]
+        public void CarTypeMinLessOK()
+        {
+            clsCarType ACarType = new clsCarType();
+            String Error = "";
+            string SomeCarType = "aa";
+            Error = ACarType.Valid(SomeCarType);
+            Assert.AreNotEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CarTypeMinBoundaryOK()
+        {
+            clsCarType ACarType = new clsCarType();
+            String Error = "";
+            string SomeCarType = "aaa";
+            Error = ACarType.Valid(SomeCarType);
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CarTypeMinPlusOneOK()
+        {
+            clsCarType ACarType = new clsCarType();
+            String Error = "";
+            string SomeCarType = "aaaa";
+            Error = ACarType.Valid(SomeCarType);
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CarTypeMaxLessOK()
+        {
+            clsCarType ACarType = new clsCarType();
+            String Error = "";
+            string SomeCarType = "aaaaaaaa";
+            Error = ACarType.Valid(SomeCarType);
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CarTypeMaxBoundaryOK()
+        {
+            clsCarType ACarType = new clsCarType();
+            String Error = "";
+            string SomeCarType = "aaaaaaaa";
+            Error = ACarType.Valid(SomeCarType);
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CarTypeMaxPlusOneOK()
+        {
+            clsCarType ACarType = new clsCarType();
+            String Error = "";
+            string SomeCarType = "aaaaaaaaa";
+            Error = ACarType.Valid(SomeCarType);
+            Assert.AreNotEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CarTypeMidOK()
+        {
+            clsCarType ACarType = new clsCarType();
+            String Error = "";
+            string SomeCarType = "aaaaa";
+            Error = ACarType.Valid(SomeCarType);
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CarExtremeMaxOK()
+        {
+            clsCarType ACarType = new clsCarType();
+            String Error = "";
+            string SomeCarType = "";
+            SomeCarType = SomeCarType.PadRight(500, 'a');
+            Error = ACarType.Valid(SomeCarType);
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void TwoCarTypePresent()
+        {
+            clsCarTypeCollection CarTypes = new clsCarTypeCollection();
+            Assert.AreEqual(CarTypes.Count, 2); 
         }
     }
 }

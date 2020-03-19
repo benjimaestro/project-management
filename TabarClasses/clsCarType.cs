@@ -9,18 +9,20 @@ namespace TabarClasses
         }
 
         public string CarType { get; set; }
-        public string CarTypeNumber { get; set; }
+        public int CarTypeNumber { get; set; }
 
         public string Valid(string someCarType)
         {
-           if (someCarType !="")
+            string Error = ""; 
+           if (someCarType.Length > 9)
             {
-                return "";
+                Error = "The county name can not be more than 9 characters ";
             }
-           else
+           if (someCarType.Length == 0)
             {
-                return "The car type can not be empty!"; 
+                Error = "The car type can not be blank"; 
             }
+            return Error; 
         }
     }
 }

@@ -53,6 +53,7 @@
     <Compile Include="tstCarCollection.cs" />
     <Compile Include="tstCars.cs" />
     <Compile Include="tstCarType.cs" />
+    <Compile Include="tstCarTypeCollection.cs" />
     <Compile Include="tstPostcode.cs" />
   </ItemGroup>
   <ItemGroup>
