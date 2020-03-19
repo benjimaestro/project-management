@@ -15,7 +15,7 @@ namespace TabarTesting
         [TestMethod]
         public void InstanceOKValidate()
         {
-            clsValidate Validator = new clsValidate();
+            clsCustomerValidate Validator = new clsCustomerValidate();
             Assert.IsNotNull(Validator);
         }
         [TestMethod]
@@ -27,64 +27,64 @@ namespace TabarTesting
         [TestMethod]
         public void ValidatePhone()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePhone("12345678");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePhone("12345678");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateEmailMinMinusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateEmail("h@h.c");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateEmail("h@h.c");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidateEmailMin()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateEmail("h@h.co");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateEmail("h@h.co");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateEmailMinPlusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateEmail("h@h.com");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateEmail("h@h.com");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateEmailMaxMinusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateEmail("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh@h.com");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateEmail("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh@h.com");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateEmailMax()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateEmail("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh@h.com");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateEmail("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh@h.com");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateEmailMaxPlusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateEmail("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh@h.com");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateEmail("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh@h.com");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidateEmailMid()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateEmail("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh@h.com");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateEmail("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh@h.com");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateEmailExtremeMax()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateEmail("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh@h.com");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateEmail("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh@h.com");
             Assert.AreNotEqual("", Error);
         }
 
@@ -92,64 +92,64 @@ namespace TabarTesting
         [TestMethod]
         public void ValidateHouseNoExtremeMin()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateHouseNo(-1234);
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateHouseNo(-1234);
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseNoMinMinusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateHouseNo(0);
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateHouseNo(0);
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseNoMin()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateHouseNo(1);
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateHouseNo(1);
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseNoMinPlusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateHouseNo(2);
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateHouseNo(2);
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseNoMid()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateHouseNo(5555);
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateHouseNo(5555);
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseNoMaxMinusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateHouseNo(9998);
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateHouseNo(9998);
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseNoMax()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateHouseNo(9999);
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateHouseNo(9999);
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseNoMaxPlusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateHouseNo(10000);
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateHouseNo(10000);
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseNoExtremeMax()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateHouseNo(9999999);
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateHouseNo(9999999);
             Assert.AreNotEqual("", Error);
         }
 
@@ -159,57 +159,57 @@ namespace TabarTesting
         [TestMethod]
         public void ValidateCountyExtremeMin()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateCounty("");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateCounty("");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidateCountyMinMinusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateCounty("ABC");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateCounty("ABC");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidateCountyMin()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateCounty("ABCD");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateCounty("ABCD");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateCountyMinPlusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateCounty("ABCDE");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateCounty("ABCDE");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateCountyMaxMinusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateCounty("AAAAAAAAAAAAAAAAAAAAAAAAA");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateCounty("AAAAAAAAAAAAAAAAAAAAAAAAA");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateCountyMax()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateCounty("AAAAAAAAAAAAAAAAAAAAAAAAAA");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateCounty("AAAAAAAAAAAAAAAAAAAAAAAAAA");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateCountyMaxPlusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateCounty("AAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateCounty("AAAAAAAAAAAAAAAAAAAAAAAAAAA");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidateCountyExtremeMax()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateCounty("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateCounty("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             Assert.AreNotEqual("", Error);
         }
 
@@ -218,57 +218,57 @@ namespace TabarTesting
         [TestMethod]
         public void ValidatePostCodeExtremeMin()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePostCode("");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePostCode("");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidatePostCodeMinMinusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePostCode("ABC");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePostCode("ABC");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidatePostCodeMin()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePostCode("ABCD");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePostCode("ABCD");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidatePostCodeMinPlusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePostCode("ABCDE");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePostCode("ABCDE");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidatePostCodeMaxMinusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePostCode("ABCDEF");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePostCode("ABCDEF");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidatePostCodeMax()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePostCode("ABCDEFG");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePostCode("ABCDEFG");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidatePostCodeMaxPlusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePostCode("ABCDEFGH");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePostCode("ABCDEFGH");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidatePostCodeExtremeMax()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePostCode("ABCDEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePostCode("ABCDEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
             Assert.AreNotEqual("", Error);
         }
 
@@ -277,57 +277,57 @@ namespace TabarTesting
         [TestMethod]
         public void ValidateHouseStreetMinMinusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateStreet("");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateStreet("");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseStreetMin()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateStreet("a");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateStreet("a");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseStreetMinPlusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateStreet("aaa");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateStreet("aaa");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseStreetMid()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateStreet("aaaaaaaaaaaaaaaaaaaaaaaaa");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateStreet("aaaaaaaaaaaaaaaaaaaaaaaaa");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseStreetMaxMinusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateStreet("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateStreet("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseStreetMax()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateStreet("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateStreet("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseStreetMaxPlusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateStreet("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateStreet("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidateHouseStreetExtremeMax()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateStreet("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateStreet("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             Assert.AreNotEqual("", Error);
         }
 
@@ -336,57 +336,57 @@ namespace TabarTesting
         [TestMethod]
         public void ValidatePhoneNoMinMinusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePhone("111111");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePhone("111111");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidatePhoneNoMin()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePhone("1111111");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePhone("1111111");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidatePhoneNoMinPlusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePhone("12345678");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePhone("12345678");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidatePhoneNoMid()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePhone("123456789");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePhone("123456789");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidatePhoneNoMaxMinusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePhone("1234567899");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePhone("1234567899");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidatePhoneNoMax()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePhone("12345678999");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePhone("12345678999");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidatePhoneNoMaxPlusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePhone("123456789999");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePhone("123456789999");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidatePhoneNoExtremeMax()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePhone("1234567899999999999000000000000000000");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePhone("1234567899999999999000000000000000000");
             Assert.AreNotEqual("", Error);
         }
 
@@ -395,85 +395,85 @@ namespace TabarTesting
         [TestMethod]
         public void ValidateNameMinMinusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateName("", "");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateName("", "");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidateNameMin()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateName("a", "a");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateName("a", "a");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateNameMinPlusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateName("aa", "aa");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateName("aa", "aa");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateNameMid()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateName("aaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaa");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateName("aaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaa");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateNameMaxMinusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateName("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateName("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateNameMax()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateName("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateName("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidateNameMaxPlusOne()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateName("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateName("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidateNameExtremeMax()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidateName("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidateName("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidatePasswordExtremeMin()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePassword("","");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePassword("","");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidatePasswordMid()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePassword("Test","Test");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePassword("Test","Test");
             Assert.AreEqual("", Error);
         }
         [TestMethod]
         public void ValidatePasswordMismatch()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePassword("Test", "NotTest");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePassword("Test", "NotTest");
             Assert.AreNotEqual("", Error);
         }
         [TestMethod]
         public void ValidatePasswordBlankMismatch()
         {
-            clsValidate Validator = new clsValidate();
-            String Error = clsValidate.ValidatePassword("Test", "");
+            clsCustomerValidate Validator = new clsCustomerValidate();
+            String Error = clsCustomerValidate.ValidatePassword("Test", "");
             Assert.AreNotEqual("", Error);
         }
 

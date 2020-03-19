@@ -72,13 +72,13 @@ namespace TabarClasses
                 Error = "Phone and house numbers must be integers </br>";
             }
 
-            Error = Error + clsValidate.ValidatePassword(Password_,PasswordConfirm);
-            Error = Error + clsValidate.ValidatePhone(PhoneNo_);
-            Error = Error + clsValidate.ValidateName(FirstName_, LastName_);
-            Error = Error + clsValidate.ValidateEmail(EMail_);
-            Error = Error + clsValidate.ValidateHouseNo(HouseNo_);
-            Error = Error + clsValidate.ValidatePostCode(PostCode_);
-            Error = Error + clsValidate.ValidateStreet(HouseStreet_);
+            Error = Error + clsCustomerValidate.ValidatePassword(Password_,PasswordConfirm);
+            Error = Error + clsCustomerValidate.ValidatePhone(PhoneNo_);
+            Error = Error + clsCustomerValidate.ValidateName(FirstName_, LastName_);
+            Error = Error + clsCustomerValidate.ValidateEmail(EMail_);
+            Error = Error + clsCustomerValidate.ValidateHouseNo(HouseNo_);
+            Error = Error + clsCustomerValidate.ValidatePostCode(PostCode_);
+            Error = Error + clsCustomerValidate.ValidateStreet(HouseStreet_);
 
             return Error;
         }

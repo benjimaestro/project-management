@@ -2,7 +2,7 @@
 
 namespace TabarClasses
 {
-    public class clsValidate
+    public class clsCustomerValidate
     {
         public static string ValidatePhone(string PhoneNo)
         {
