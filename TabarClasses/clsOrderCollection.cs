@@ -7,10 +7,10 @@ namespace TabarClasses
     {
         //private data member for the list
         List<clsOrder> mOrderList = new List<clsOrder>();
-        //private data member thisCar
+        //private data member thisOrder
         clsOrder mThisOrder = new clsOrder();
 
-        //public property for the car list
+        //public property for the Order List
         public List<clsOrder> OrderList
         {
             get
@@ -67,7 +67,7 @@ namespace TabarClasses
 
         public int Add()
         {
-            //add a new record to the database based on the values of mThisCar
+            //add a new record to the database based on the values of mThisOrder
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
@@ -77,13 +77,13 @@ namespace TabarClasses
             DB.AddParameter("@Date", mThisOrder.Date);
             DB.AddParameter("@Quality", mThisOrder.Quality);
             DB.AddParameter("@Quantity", mThisOrder.Quantity);
-            //execute the query returning the primary key value
+            //execute the query returning the primary key data
             return DB.Execute("sproc_tblOrder_Insert");
         }
 
         public void Delete()
         {
-            //deletes the record pointed to by thisCar
+            //delete the record from sql database by thisOrder
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
@@ -94,7 +94,7 @@ namespace TabarClasses
 
         public void Update()
         {
-            //Update a existing record to the database based on the values of thisCar
+            //Update a existing record to the database from thisOrder
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
@@ -111,7 +111,6 @@ namespace TabarClasses
 
         public void ReportByItemType(string ItemType)
         {
-            //filters the records based on a full or partial model
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //send the model parameter to the database
@@ -147,7 +146,7 @@ namespace TabarClasses
                 AOrder.Quantity = Convert.ToInt32(DB.DataTable.Rows[Index]["Quantity"]);
                 AOrder.Date = Convert.ToString(DB.DataTable.Rows[Index]["Date"]);
                 mOrderList.Add(AOrder);
-                //point at the next record
+                //loop this code for the next record
                 Index++;
             }
         }

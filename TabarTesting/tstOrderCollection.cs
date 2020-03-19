@@ -25,7 +25,6 @@ namespace TabarTesting
             //create an instance of the class we want to create
             clsOrderCollection AllOrder = new clsOrderCollection();
             //create some test data to assign to the property
-            //in this case that data needs to be a list of objects
             List<clsOrder> TestList = new List<clsOrder>();
             //add an item to the list
             //create the item of test data
@@ -73,10 +72,8 @@ namespace TabarTesting
             //create an instance of the class we want to create
             clsOrderCollection AllOrder = new clsOrderCollection();
             //create some test data to assign to the property
-            //in this case the data needs to be a list of objects
             List<clsOrder> TestList = new List<clsOrder>();
             //add an item to the list
-            //create the time of test data
             clsOrder TestItem = new clsOrder();
             //set its properties
             TestItem.Quality = true;
@@ -200,7 +197,7 @@ namespace TabarTesting
         [TestMethod]
         public void ReportByItemNameMethodOK()
         {
-            //CREATE AN INSTANCE OF THE CLASS CONTAINING UNFILTERED RESULTS
+            // create an instance of the class 
             clsOrderCollection AllOrder = new clsOrderCollection();
             //create an instance of the filtered data
             clsOrderCollection FilteredItemType = new clsOrderCollection();
@@ -215,7 +212,7 @@ namespace TabarTesting
         {
             //create an instance of the filtered data
             clsOrderCollection FilteredItemType = new clsOrderCollection();
-            //apply a model that doesn't exist
+            //apply a ItemType that doesn't exist
             FilteredItemType.ReportByItemType("xxxxx xxxxxxxxxx xxxx");
             //test  to see that there are no records
             Assert.AreEqual(0, FilteredItemType.Count);
@@ -228,17 +225,17 @@ namespace TabarTesting
             clsOrderCollection FilteredItemType = new clsOrderCollection();
             //var to store outcomes
             Boolean OK = true;
-            //apply a model that doesn't exist
+            //apply a Item type that doesn't exist
             FilteredItemType.ReportByItemType("121321313212132132131321");
             //check that the correct number of records are found
             if (FilteredItemType.Count == 2)
             {
-                //check that the first record is ID 4
+                //check that the first record is id 2
                 if (FilteredItemType.OrderList[0].OrderID != 9)
                 {
                     OK = false;
                 }
-                //check that the first record is ID 1
+                //check that the first record is id 1
                 if (FilteredItemType.OrderList[1].OrderID != 10)
                 {
                     OK = false;

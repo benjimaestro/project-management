@@ -14,16 +14,14 @@ public partial class Delete : System.Web.UI.Page
     //event handler for the load event
     protected void Page_Load(object sender, EventArgs e)
     {
-        //get the number of the address to be deleted from the session object
+        //get the number of the Order to be deleted from the session object
         OrderID = Convert.ToInt32(Session["OrderD"]);
 
     }
 
     void DeleteOrder()
     {
-        //function to delete the selected record
-
-        //create a new instance of the car
+        //create a new instance of the Order
         clsOrderCollection OrderLog = new clsOrderCollection();
         //find the record to delete
         OrderLog.ThisOrder.Find(OrderID);
@@ -42,7 +40,7 @@ public partial class Delete : System.Web.UI.Page
 
     protected void btnNo_Click(object sender, EventArgs e)
     {
-        //redirect back to tthe main page 
+        //redirect back to the main page 
         Response.Redirect("Order.aspx");
     }
 }

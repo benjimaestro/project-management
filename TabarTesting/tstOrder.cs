@@ -164,7 +164,7 @@ namespace TabarTesting
             Int32 OrderID = 8;
             //invoke the method
             Found = AOrder.Find(OrderID);
-            //check the Car ID
+            //check the OrderID
             if (AOrder.ItemName != "BMW")
             {
                 OK = false;
@@ -207,7 +207,7 @@ namespace TabarTesting
             Int32 OrderID = 8;
             //invoke the method
             Found = AOrder.Find(OrderID);
-            //check the Car ID
+            //check the OrderID
             if (AOrder.Price != 25690.00m)
             {
                 OK = false;
@@ -228,7 +228,7 @@ namespace TabarTesting
             Int32 OrderID = 8;
             //invoke the method
             Found = AOrder.Find(OrderID);
-            //check the Car ID
+            //check the OrderID
             if (AOrder.Quantity != 2)
             {
                 OK = false;
@@ -425,7 +425,7 @@ namespace TabarTesting
             DateTime TestDate;
             //set the date totodays date 
             TestDate = DateTime.Now.Date;
-            //change the date to whatever the date is less 100 years 
+            //change the date to  less than 100 years 
             TestDate = TestDate.AddYears(-100);
             //convert the date variable to a string variable 
             string Date = TestDate.ToString();
@@ -446,7 +446,7 @@ namespace TabarTesting
             DateTime TestDate;
             //set the date totodays date 
             TestDate = DateTime.Now.Date;
-            //change the date to whatever the date is less 1 day 
+            //change the date to less than 1 day 
             TestDate = TestDate.AddDays(-1);
             //convert the date variable to a string variable 
             string Date = TestDate.ToString();
@@ -465,7 +465,7 @@ namespace TabarTesting
             String Error = "";
             //create a variable to store the test date data 
             DateTime TestDate;
-            //set the date totodays date 
+            //set the date to todays date 
             TestDate = DateTime.Now.Date;
             //convert the date variable to a string variable 
             string Date = TestDate.ToString();
@@ -484,9 +484,9 @@ namespace TabarTesting
             String Error = "";
             //create a variable to store the test date data 
             DateTime TestDate;
-            //set the date totodays date 
+            //set the date to todays date 
             TestDate = DateTime.Now.Date;
-            //change the date to whatever the date is plus 1 day 
+            //change the date to plus 1 day 
             TestDate = TestDate.AddDays(1);
             //convert the date variable to a string variable 
             String Date = TestDate.ToString();
@@ -507,7 +507,7 @@ namespace TabarTesting
             DateTime TestDate;
             //set the date totodays date 
             TestDate = DateTime.Now.Date;
-            //change the date to whatever the date is plus 100 years 
+            //change the date to plus 100 years 
             TestDate = TestDate.AddYears(100);
             //convert the date variable to a string variable 
             string Date = TestDate.ToString();

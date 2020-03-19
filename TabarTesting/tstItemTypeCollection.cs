@@ -11,7 +11,7 @@ namespace TabarTesting
         [TestMethod]
         public void InstanceOK()
         {
-            //create an instance of our class clsCar
+            //create an instance of our class clsItemType
             clsItemTypeCollection AllItemType = new clsItemTypeCollection();
             //check to see that the class is not null
             Assert.IsNotNull(AllItemType);
@@ -20,7 +20,7 @@ namespace TabarTesting
         [TestMethod]
         public void CountPropertyOK()
         {
-            //create an instance of our class clsCar
+            //create an instance of our class clsOrder
             clsItemTypeCollection AllItemType = new clsItemTypeCollection();
             //create some test data to assign to the property
             Int32 SomeCount = 10;

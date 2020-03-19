@@ -8,12 +8,12 @@ namespace TabarClasses
 {
     public class clsItemType
     {
-        //private data member for the colour no property
+        //private data member for the ItemType no property
         private int mItemTypeNo;
-        //private data member for the Colour Name property
+        //private data member for the ItemName property
         private string mItemType;
 
-        //public property for the ColourNo
+        //public property for the ItemTypeNo
         public int ItemTypeNo
         {
             get
@@ -27,7 +27,7 @@ namespace TabarClasses
                 mItemTypeNo = value;
             }
         }
-        //public roperty for the CarName
+        //public property for the ItemType
         public string ItemType
         {
             get
@@ -46,7 +46,7 @@ namespace TabarClasses
         {
             //sttring variable to store the error message
             string Error = "";
-            //if the name of the colour is more than 16
+            //if the name of the ItemType is more than 50
             if (someItemName.Length > 50)
             {
                 //return an error message
@@ -64,7 +64,7 @@ namespace TabarClasses
         {
             //create an instance of the data connection
             clsDataConnection DB = new clsDataConnection();
-            //add the parameter for the colour no to search for
+            //add the parameter for the item type no to search for
             DB.AddParameter("@ItemTypeNo", ItemTypeNo);
             //execute the store procedure
             DB.Execute("sproc_tblItemType_FilterByItemTypeNo");

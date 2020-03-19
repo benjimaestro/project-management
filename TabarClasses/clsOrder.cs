@@ -33,7 +33,7 @@ namespace TabarClasses
                 mOrderID = value;
             }
         }
-        //public property for the Item name
+        //public property for the Item type name
         public string ItemType
         {
             get
@@ -75,7 +75,7 @@ namespace TabarClasses
                 mPrice = value;
             }
         }
-        //public roperty for the Quantity
+        //public property for the Quantity
         public int Quantity
         {
             get
@@ -121,11 +121,11 @@ namespace TabarClasses
         {
             //create an instance of the data connection 
             clsDataConnection DB = new clsDataConnection();
-            //add the parameter for the adress no to search for
+            //add the parameter for the OrderID to search for
             DB.AddParameter("@OrderID", OrderID);
             //execute the stored procedure
             DB.Execute("sproc_tblOrder_FilterByOrderID");
-            //if one record is found (there should be either one or zero!)
+            //if one record is found
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members
@@ -152,7 +152,7 @@ namespace TabarClasses
             //create a string variable to store the erroe
             String Error = "";
             //create a temporary variable to store date values
-            //if the CarName is blank
+            //if the ItemName is blank
             if (ItemName.Length == 0)
             {
                 //record the error
@@ -173,7 +173,6 @@ namespace TabarClasses
                 Error = Error + "The Date not be more than 10 characters long : ";
             }
             //is the Quantity blank
-            //cost the min length of the cost
             if (Quantity.Length == 0)
             {
                 //set the error messsage

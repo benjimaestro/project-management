@@ -8,7 +8,7 @@ using TabarClasses;
 
 public partial class AnOrder : System.Web.UI.Page
 {
-    //variable to store the primary key value of the record to be edited
+    //var to store the primary key value of the record to be edited
     Int32 OrderID;
 
     protected void Page_Load(object sender, EventArgs e)
@@ -19,7 +19,7 @@ public partial class AnOrder : System.Web.UI.Page
         {
             //if this is not a new record
             DisplayItemType();
-            //if the carid is not -1 then display the data from the record
+            //if the OrderID is not -1 then display the data from the record
             if (OrderID != -1)
             {
                 //display the existing data
@@ -27,8 +27,6 @@ public partial class AnOrder : System.Web.UI.Page
             }
         }
     }
-
-    ////event handler for the ok button
     protected void btnOK_Click(object sender, EventArgs e)
     {
         if (OrderID == -1)
@@ -38,24 +36,24 @@ public partial class AnOrder : System.Web.UI.Page
         }
         else
         {
-            //updaate the record
+            //update the record
             Update();
         }
-        //all done so redirect back to the main page
+        //redirect back to the main page
         Response.Redirect("Order.aspx");
     }
 
-    //function for adding new records
+    //adding new records
     void Add()
     {
-        //create an instance of the car log
+        //create an instance of the Orderlog
         clsOrderCollection OrderLog = new clsOrderCollection();
         //validate the date on the web form
         String Error = OrderLog.ThisOrder.Valid(txtItemName.Text, txtQuantity.Text, txtDate.Text, txtPrice.Text);
         //if the data is OK then add it to the object
         if (Error == "")
         {
-            //get the data entered by the user
+            //recieve data from the user
             OrderLog.ThisOrder.ItemName = txtItemName.Text;
             OrderLog.ThisOrder.Quantity = Convert.ToInt32(txtQuantity.Text);
             OrderLog.ThisOrder.Price = Convert.ToInt32(txtPrice.Text);
@@ -64,7 +62,7 @@ public partial class AnOrder : System.Web.UI.Page
             OrderLog.ThisOrder.ItemType = ddlItemType.Text;
             //add the record
             OrderLog.Add();
-            //all done to redirect back to the main page
+            //redirect back to the main page
             Response.Redirect("Order.aspx");
         }
         else
@@ -76,8 +74,8 @@ public partial class AnOrder : System.Web.UI.Page
 
     void Update()
     {
-        //create an instance of the car log
-        TabarClasses.clsOrderCollection OrderLog = new TabarClasses.clsOrderCollection();
+        //create an instance of the Orderlog
+        clsOrderCollection OrderLog = new clsOrderCollection();
         //validate the date on the web form
         String Error = OrderLog.ThisOrder.Valid(txtItemName.Text, txtQuantity.Text, txtDate.Text, txtPrice.Text);
         //if the data is OK then add it to the object
@@ -85,7 +83,7 @@ public partial class AnOrder : System.Web.UI.Page
         {
             //find the record to update
             OrderLog.ThisOrder.Find(OrderID);
-            //get the data entered by the user
+            // recieve data from the user
             OrderLog.ThisOrder.ItemName = txtItemName.Text;
             OrderLog.ThisOrder.Quantity = Convert.ToInt32(txtQuantity.Text);
             OrderLog.ThisOrder.Price = Convert.ToInt32(txtPrice.Text);
@@ -94,42 +92,42 @@ public partial class AnOrder : System.Web.UI.Page
             OrderLog.ThisOrder.ItemType = ddlItemType.Text;
             //update the record
             OrderLog.Update();
-            //all done to redirect back to the main page
+            //redirect back to the main page
             Response.Redirect("Order.aspx");
         }
         else
         {
             //report an error
-            lblError.Text = "there were problems with the data entered" + Error;
+            lblError.Text = "There were problems with the data entry" + Error;
         }
     }
 
     void DisplayOrder(Int32 OrderID)
     {
-        //create an instance of the car log
+        //create an instance of the Orderlog
         clsOrderCollection OrderLog = new clsOrderCollection();
         //find the record to update
         OrderLog.ThisOrder.Find(OrderID);
-        //display the car name
+        //display the item name
         txtItemName.Text = OrderLog.ThisOrder.ItemName;
-        //display the model
+        //display the Quantity
         txtQuantity.Text = Convert.ToString(OrderLog.ThisOrder.Quantity);
         //display the price
         txtPrice.Text = Convert.ToString(OrderLog.ThisOrder.Price);
-        //display the year made
+        //display the date
         txtDate.Text = OrderLog.ThisOrder.Date;
-        //display the check boxes
+        //display the quality
         chkNew.Checked = OrderLog.ThisOrder.Quality = true;
-        //display the drop down list
+        //display the ItemType drop down list
         ddlItemType.SelectedValue = Convert.ToString(OrderLog.ThisOrder.ItemType);
     }
 
-    //function for populating the colour drop down list
+    //function for populating the ItemType drop down list
     void DisplayItemType()
     {
-        //create an instance of the Colour Collection
+        //create an instance of the ItemTypeCollection
         clsItemTypeCollection ItemType = new clsItemTypeCollection();
-        //set the data source to the list of colours in the collection
+        //set the data source to the list of ItemType in the collection
         ddlItemType.DataSource = ItemType.AllItemType;
         //set the name of the primary key
         ddlItemType.DataValueField = "ItemTypeNo";
