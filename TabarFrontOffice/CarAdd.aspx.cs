@@ -19,16 +19,8 @@ public partial class CarAdd : System.Web.UI.Page
  
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
-        clsCars ACar = new clsCars();
-        ACar.CarMake = txtCarMake.Text;
-        ACar.CarModel = txtCarModel.Text;
-        ACar.CarModelNumber = txtCarModelNumber.Text;
-        ACar.CarColour = txtCarColour.Text;
-        ACar.CarPrice = Convert.ToInt32(this.txtCarPrice.Text);
-       // ACar.CarTypeNumber = Convert.ToInt32(this.drpCarType.Text);
-        ACar.CarReleaseDate = txtCarRDate.Text;
-        Session["ACar"] = ACar;
-        Response.Redirect("CarEdit.aspx");
+        Add();
+        Response.Redirect("Default.aspx");
     }
 
     protected void txtCarRDate_TextChanged(object sender, EventArgs e)
@@ -47,6 +39,29 @@ public partial class CarAdd : System.Web.UI.Page
         drpCarType.DataValueField = "CarTypeNo";
         drpCarType.DataTextField = "CarType";
         drpCarType.DataBind(); 
+    }
+    void Add()
+    {
+        clsCarsCollection CarShop = new clsCarsCollection();
+        String Error = CarShop.ThisCar.Valid(txtCarMake.Text, txtCarModel.Text, txtCarModelNumber.Text, txtCarColour.Text, txtCarRDate.Text, Convert.ToInt32(txtCarPrice.Text));
+
+        if (Error == "")
+        {
+            CarShop.ThisCar.CarMake = txtCarMake.Text;
+            CarShop.ThisCar.CarModel = txtCarModel.Text;
+            CarShop.ThisCar.CarModelNumber = txtCarModelNumber.Text;
+            CarShop.ThisCar.CarColour = txtCarColour.Text;
+            CarShop.ThisCar.CarReleaseDate = txtCarRDate.Text;
+            CarShop.ThisCar.CarPrice = Convert.ToInt32(txtCarPrice.Text);
+            CarShop.ThisCar.CarTypeNumber = Convert.ToInt32(drpCarType.SelectedValue);
+            CarShop.Add();
+          
+        }
+        else
+        {
+            lblError.Text = "There were problem with the data entered " + Error;
+        }
+
     }
   
 }
