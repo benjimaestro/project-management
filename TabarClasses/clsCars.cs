@@ -59,7 +59,7 @@ namespace TabarClasses
             {
                 Error = Error + "The car make can not be blank : ";
             }
-            if (CarMake.Length > 3)
+            if (CarMake.Length < 3)
             {
                 Error = Error + "The car make can not be less than 3 characters ";
             }
@@ -67,6 +67,55 @@ namespace TabarClasses
             {
                 Error = Error + "The car make can not be longer than 40 chracters ";
             }
+            if (CarModel.Length == 0)
+            {
+                Error = Error + "The car model can not be blank :";
+            }
+            if (CarModel.Length < 1)
+            {
+                Error = Error + "The car model can not be less than 1 character";
+            }
+            if (CarModel.Length > 45 )
+            {
+                Error = Error + "The car model can not be more than 45 characters";
+            }
+            if (CarModelNumber.Length == 0)
+            {
+                Error = Error + "The car model number can not be blank :";
+            }
+            if (CarModelNumber.Length < 1)
+            {
+                Error = Error + "The car model number can not be less than 1 character";
+            }
+            if (CarModelNumber.Length > 7)
+            {
+                Error = Error + "The car model can not be more than 7 characters";
+            }
+            if (CarColour.Length == 0)
+            {
+                Error = Error + "The car colour can not be blank :";
+            }
+            if (CarColour.Length < 3)
+            {
+                Error = Error + "The car colour can not be less than 3 character";
+            }
+            if (CarColour.Length > 25)
+            {
+                Error = Error + "The car model can not be more than 25 characters";
+            }
+            if (CarReleaseDate.Length == 0)
+            {
+                Error = Error + "The car release date can not be blank :";
+            }
+            if (CarColour.Length < 10)
+            {
+                Error = Error + "The car release date can not be less than 10 character, use DD/MM/YYYY";
+            }
+            if (CarColour.Length > 10)
+            {
+                Error = Error + "The car release date can not be more than 10 characters, use DD/MM/YYYY";
+            }
+
             return Error;
         }
     }

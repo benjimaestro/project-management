@@ -16,6 +16,7 @@ namespace TabarClasses
         clsCars mThisCar = new clsCars(); 
         public clsCarsCollection()
         {
+            
             Int32 Index = 0;
             Int32 RecordCount = 0;
             clsDataConnection DB = new clsDataConnection();
@@ -82,9 +83,25 @@ namespace TabarClasses
             DB.AddParameter("@CarModelNumber", mThisCar.CarModelNumber);
             DB.AddParameter("@CarColour", mThisCar.CarColour);
             DB.AddParameter("@CarPrice", mThisCar.CarPrice);
-            DB.AddParameter("@CarTypeNo", mThisCar.CarTypeNumber);
+            DB.AddParameter("@CarTypeNumber", mThisCar.CarTypeNumber);
             DB.AddParameter("@CarReleaseDate", mThisCar.CarReleaseDate);
             return DB.Execute("sproc_tblCars_Insert");
         }
+
+        public Boolean Delete(Int32 CarNo)
+        {
+            try
+            {
+                clsDataConnection DB = new clsDataConnection();
+                DB.AddParameter("@CarNo", CarNo);
+                DB.Execute("sproc_tblCars_Delete");
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        
     }
 }

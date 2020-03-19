@@ -71,10 +71,10 @@ namespace TabarTesting
         {
             clsCarsCollection AllCars = new clsCarsCollection();
             clsCars TestCar = new clsCars();
-            Int32 PrimaryKey = 0;
+            Int32 PrimaryKey = 1;
             TestCar.CarNo = 1;
-            TestCar.CarMake = "Nissan";
-            TestCar.CarModel = "Aki";
+            TestCar.CarMake = "Mercedes";
+            TestCar.CarModel = "S Class";
             TestCar.CarModelNumber = "VRi122";
             TestCar.CarColour = "Blue";
             TestCar.CarPrice = 1;

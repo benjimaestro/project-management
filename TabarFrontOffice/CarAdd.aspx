@@ -25,9 +25,9 @@
         <asp:DropDownList ID="drpCarType" runat="server" style="z-index: 1; left: 243px; top: 216px; position: absolute">
         </asp:DropDownList>
         <asp:TextBox ID="txtCarRDate" runat="server" style="z-index: 1; left: 276px; top: 246px; position: absolute" OnTextChanged="txtCarRDate_TextChanged"></asp:TextBox>
-        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 51px; top: 278px; position: absolute; width: 74px"></asp:Label>
-        <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" style="z-index: 1; left: 51px; top: 311px; position: absolute; width: 79px" Text="SUBMIT" />
-        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" style="z-index: 1; left: 53px; top: 355px; position: absolute" Text="CANCEL" />
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 51px; top: 320px; position: absolute; width: 74px"></asp:Label>
+        <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" style="z-index: 1; left: 51px; top: 349px; position: absolute; width: 79px" Text="SUBMIT" />
+        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" style="z-index: 1; left: 53px; top: 391px; position: absolute" Text="CANCEL" />
     </form>
 </body>
 </html>

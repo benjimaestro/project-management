@@ -27,7 +27,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnApplyCarColour_Click(object sender, EventArgs e)
     {
-
+       
     }
 
     protected void btnAdd_Click(object sender, EventArgs e)
@@ -50,4 +50,25 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
+
+    protected void btnApplyCarMake_Click(object sender, EventArgs e)
+    {
+        
+    }
+
+    protected void btnApplyCarModel_Click(object sender, EventArgs e)
+    {
+      
+    }
+
+    protected void btnFilterCarPrice_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btnDisplayAll_Click(object sender, EventArgs e)
+    {
+        DisplayCars(); 
+    }
+ 
 }
