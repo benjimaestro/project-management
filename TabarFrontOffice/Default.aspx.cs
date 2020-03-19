@@ -10,6 +10,7 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+       
       if (IsPostBack == false)
         {
             DisplayCars(); 
@@ -38,12 +39,39 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-        Response.Redirect("CarEdit.aspx");
+        Int32 CarNo; 
+        if (lstCarList.SelectedIndex != -1)
+        {
+            CarNo = Convert.ToInt32(lstCarList.SelectedValue);
+            Session["CarNo"] = CarNo;
+            Response.Redirect("CarEdit.aspx"); 
+        }
+        else
+        {
+            lblError.Text = "Please select a record to edit ";
+        }
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)
     {
-        Response.Redirect("CarDelete.aspx");
+        Int32 CarNo;
+        if (lstCarList.SelectedIndex != 1)
+        {
+            try
+            {
+                CarNo = Convert.ToInt32(lstCarList.SelectedValue);
+                Session["CarNo"] = CarNo;
+                Response.Redirect("CarDelete.aspx");
+            }
+            catch
+            {
+                lblError.Text = "Please select a record you wish to delete frist ";
+            }
+        }
+        else
+        {
+            lblError.Text = "Please select a record you wish to delete frist ";
+        }
     }
 
     protected void btnCustomer_Click(object sender, EventArgs e)

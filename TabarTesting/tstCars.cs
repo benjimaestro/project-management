@@ -708,6 +708,12 @@ namespace TabarTesting
             Assert.AreNotEqual(Error, "");
 
         }
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            
+
+        }
 
     }
 }

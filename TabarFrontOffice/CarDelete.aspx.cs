@@ -8,26 +8,24 @@ using TabarClasses;
 
 public partial class CarDelete : System.Web.UI.Page
 {
+    clsCarsCollection CarShop = new clsCarsCollection();
+    Int32 CarNo; 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        CarNo = Convert.ToInt32(Session["CarNo"]);
     }
 
     protected void btnYes_Click(object sender, EventArgs e)
     {
-        clsCarsCollection MyCarShop = new clsCarsCollection();
-        Int32 CarNo;
-        Boolean Success;
-        CarNo = Convert.ToInt32(txtCarNo.Text);
-        Success = MyCarShop.Delete(CarNo); 
-        if (Success == true)
-        {
-            lblError.Text = "You have deleted car number " + CarNo;
-        }
-        else
-        {
-            lblError.Text = "There was an error which prevented the process of deleting the record ";
-        }
+
+        DeleteCars();
+        Response.Redirect("Default.aspx");
+    }
+    void DeleteCars()
+    {
+        clsCarsCollection CarShop = new clsCarsCollection();
+        CarShop.ThisCar.Find(CarNo);
+        CarShop.Delete();
     }
 
     protected void btnNo_Click(object sender, EventArgs e)
